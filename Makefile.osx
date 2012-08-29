@@ -1,0 +1,7 @@
+install:
+	@if [ ! -x ~/.emacs ]; then \
+            cp dot.emacs ~/.emacs; \
+        else \
+            diff -ub dot.emacs ~/.emacs; \
+	fi
+	@rsync -av --exclude '.git' emacs.d/ ~/.emacs.d/

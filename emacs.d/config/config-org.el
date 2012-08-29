@@ -1,0 +1,10 @@
+(require 'org-install)
+
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(define-key global-map "\C-cc" 'org-capture)
+(define-key global-map "\C-cb" 'org-iswitchb)
+(setq org-log-done t)
+(setq org-directory (concat user-emacs-directory "org"))
+(setq org-agenda-files (list (concat org-directory "/agenda.org")))
+(setq org-default-notes-file (concat org-directory "/captured-notes.org"))

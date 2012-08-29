@@ -1,0 +1,7 @@
+(global-set-key "\C-s" 'isearch-forward-regexp)
+(define-key global-map [home] 'beginning-of-line)
+(define-key global-map [end] 'end-of-line)
+(define-key global-map [M-home] 'beginning-of-buffer)
+(define-key global-map [C-home] 'beginning-of-buffer)
+(define-key global-map [M-end] 'end-of-buffer)
+(define-key global-map [C-end] 'end-of-buffer)
