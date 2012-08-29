@@ -5,3 +5,7 @@ install:
             diff -ub dot.emacs ~/.emacs; \
 	fi
 	@rsync -av --exclude '.git' emacs.d/ ~/.emacs.d/
+
+check-changes:
+	@diff -pruNb --exclude '*~' --exclude '.git' --exclude '*.elc' ~/.emacs.d emacs.d
+	@diff -ub ~/.emacs dot.emacs
