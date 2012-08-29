@@ -1,14 +1,14 @@
-(load-file "./config-look.el")
-(load-file "./config-keys.el")
+(my/load-file "./config-look.el")
+(my/load-file "./config-keys.el")
 
 (require 'ido)
 
-(load-file "./config-modes-common.el")
+(my/load-file "./config-modes-common.el")
 
-(load-file "./config-org.el")
+(my/load-file "./config-org.el")
 
-(load-file "./config-eshell.el")
+(my/load-file "./config-eshell.el")
 
-(load-file "./config-perl-mode.el")
+(my/load-file "./config-perl-mode.el")
 
-(load-file "./config-yasnippet.el")
+(my/load-file "./config-yasnippet.el")

@@ -1,3 +1,14 @@
+;; I like that load-file loads exactly the file I request when a path is used
+;; but I want to use compiled files if they exist.
+(defun my/load-file (filename)
+  (let ((elc (concat (file-name-sans-extension filename) ".elc")))
+    (if (file-exists-p elc)
+        (load-file elc)
+      (load-file filename)
+     )
+   )
+)
+
 ;; find open source packages
 (let ((default-directory (concat user-emacs-directory
 			    (convert-standard-filename "site-lisp/"))))
@@ -12,18 +23,18 @@
 (byte-recompile-directory user-emacs-directory 0)
 
 ;; functions
-(load-file (concat user-emacs-directory "my-lisp/functions.el"))
+(my/load-file (concat user-emacs-directory "my-lisp/functions.el"))
 
 ;; configs
 (let ((default-directory (concat user-emacs-directory
 			    (convert-standard-filename "config/")))
       )
-  (load-file "load-my-config.el")
+  (my/load-file "load-my-config.el")
  )
 
 ;; must come after the configs are loaded
 (setq custom-file (concat user-emacs-directory "my-custom.el"))
-(load-file custom-file)
+(my/load-file custom-file)
 
 (load "my-ack")
 
