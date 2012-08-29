@@ -10,3 +10,5 @@
 (load-file "./config-eshell.el")
 
 (load-file "./config-perl-mode.el")
+
+(load-file "./config-yasnippet.el")
