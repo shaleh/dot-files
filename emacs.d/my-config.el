@@ -9,7 +9,7 @@
    (normal-top-level-add-to-load-path '("."))
    (normal-top-level-add-subdirs-to-load-path))
 
-(byte-recompile-directory (user-emacs-directory) 0)
+(byte-recompile-directory user-emacs-directory 0)
 
 ;; functions
 (load-file (concat user-emacs-directory "my-lisp/functions.el"))
