@@ -1,3 +1,8 @@
+default: catch
+
+catch:
+	@echo "Options:\n * install\n * check-changes"
+
 install:
 	@if [ ! -x ~/.emacs ]; then \
             cp dot.emacs ~/.emacs; \
