@@ -1,3 +1,6 @@
+(eval-when-compile (require 'cl))
+(setq tramp-mode nil)
+
 ;; I like that load-file loads exactly the file I request when a path is used
 ;; but I want to use compiled files if they exist.
 (defun my/load-file (filename)
@@ -36,6 +39,4 @@
 (setq custom-file (concat user-emacs-directory "my-custom.el"))
 (my/load-file custom-file)
 
-(load "my-ack")
-
-(load "thrift")
+(autoload 'ack "my-ack" "my ack function" t)
