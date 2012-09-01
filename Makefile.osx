@@ -3,7 +3,14 @@ default: catch
 catch:
 	@echo "Options:\n * install\n * check-changes"
 
-install:
+check-prereqs:
+	@echo "Emacs?"  && test -e /Applications/Emacs.app
+	@echo "GCC?"    && which gcc    && gcc --version >/dev/null
+	@echo "Brew?"   && which brew   && test -x `which brew`
+	@echo "Aspell?" && which aspell && test -x `which aspell`
+	@echo "dot?"    && which dot    && test -x `which dot`
+
+install: check-prereqs
 	@if [ ! -x ~/.emacs ]; then \
             cp dot.emacs ~/.emacs; \
         else \
