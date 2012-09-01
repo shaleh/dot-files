@@ -9,6 +9,7 @@ check-prereqs:
 	@echo "Brew?"   && which brew   && test -x `which brew`
 	@echo "Aspell?" && which aspell && test -x `which aspell`
 	@echo "dot?"    && which dot    && test -x `which dot`
+	@echo "pwsafe?" && which pwsafe && test -x `which pwsafe`
 
 install: check-prereqs
 	@if [ ! -x ~/.emacs ]; then \
