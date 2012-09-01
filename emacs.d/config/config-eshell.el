@@ -1,27 +1,25 @@
 ;;      (setenv "PATH" (concat (getenv PATH) ":/usr/local/bin"))
 
-(require 'eshell)
+(autoload 'eshell "eshell" "eshell mode" t)
+
+(defun my/eshell-maybe-bol ()
+  (interactive)
+  (let ((p (point))
+        )
+    (eshell-bol)
+    (if (= p (point))
+        (beginning-of-line)
+      )
+    )
+  )
 
 (add-hook 'eshell-mode-hook
    '(lambda nil
       ;;(eshell/export "EPOCROOT=\\Paragon\\")
         (eshell/addpath "/usr/local/bin" "/Users/sperry/bin")
+        (setq show-trailing-whitespace nil)
+        (local-set-key (kbd "C-a") 'my/eshell-maybe-bol)
       )
  )
 
-;; probably a better way to do this....
-(defun my/goto-documents ()
-  (interactive)
-  (eshell-dirs-substitute-cd "~/Documents/"))
-
-(defun my/goto-svn ()
-  (interactive)
-  (eshell-dirs-substitute-cd "/svn/"))
-
-(defun my/goto-p4 ()
-  (interactive)
-  (eshell-dirs-substitute-cd "/p4/"))
-
-(defun my/goto-org ()
-  (interactive)
-  (eshell-dirs-substitute-cd 'org-directory))
+(setq-default eshell-directory-name (concat user-emacs-directory "eshell"))
