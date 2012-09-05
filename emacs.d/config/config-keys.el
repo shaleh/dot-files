@@ -6,3 +6,4 @@
 (global-set-key (kbd "M-<end>") 'end-of-buffer)
 (global-set-key (kbd "C-<end>") 'end-of-buffer)
 (global-set-key (kbd "M-g") 'goto-line)
+(global-set-key (kbd "C-x C-r") 'my/recentf-ido-find-file)

@@ -33,9 +33,15 @@
 
 (show-paren-mode 1)
 
+(load-library "ediff-trees")
+(require 'ido)
+(require 'p4)
 (require 'fic-mode)
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+(require 'recentf)
+(recentf-mode t)
+(setq recentf-save-file (concat user-emacs-directory "recentf"))
 
 (autoload 'linum-mode "linum" "mode for line numbers" t)
 (autoload 'pwsafe "pwsafe" "load pwsafe" t)
