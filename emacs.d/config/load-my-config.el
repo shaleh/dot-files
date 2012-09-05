@@ -1,8 +1,6 @@
 (my/load-file "./config-look.el")
 (my/load-file "./config-keys.el")
 
-(require 'ido)
-
 (my/load-file "./config-modes-common.el")
 
 (my/load-file "./config-c.el")
