@@ -1,3 +1,5 @@
+(require 'my-macros)
+
 (my/load-file "./config-look.el")
 (my/load-file "./config-keys.el")
 
@@ -13,8 +15,14 @@
 
 (my/load-file "./config-eshell.el")
 
+(my/load-file "./config-haskell.el")
+
 (my/load-file "./config-perl-mode.el")
 
 (my/load-file "./config-thrift.el")
 
 (my/load-file "./config-yasnippet.el")
+
+(WhenAtWork
+  (my/load-file "./config-work.el")
+ )
