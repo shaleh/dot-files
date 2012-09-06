@@ -1,5 +1,9 @@
-(setq inhibit-splash-screen t)
-(tool-bar-mode -1)
+(setq
+      inhibit-splash-screen t
+      tool-bar-mode -1
+      line-number-mode t
+      column-number-mode t
+ )
 
 ;; load themes
 (require 'color-theme)

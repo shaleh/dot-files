@@ -20,5 +20,5 @@ install: check-prereqs
 	@rsync -av --exclude '.git' emacs.d/ ~/.emacs.d/
 
 check-changes:
-	@diff -pruNb --exclude '*~' --exclude '.git' --exclude '*.elc' --exclude 'recentf' ~/.emacs.d emacs.d
+	@diff -pruNb --exclude '*~' --exclude '.git' --exclude '*.elc' --exclude 'state' ~/.emacs.d emacs.d
 	@diff -ub ~/.emacs dot.emacs
