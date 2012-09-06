@@ -1,3 +1,5 @@
+(require 'my-macros)
+
 (global-subword-mode 1)
 
 (setq search-highlight t         ;; highlight when searching
@@ -8,20 +10,11 @@
   (global-hl-line-mode t)
  )
 
-(defmacro WhenEmacsOlderThan (major minor &rest body)
-  (list 'if (or (< emacs-major-version major) (and (= emacs-major-version major) (< emacs-minor-version minor)))
-           (cons 'progn body))
- )
-
-(defmacro WhenEmacsNewerThan (major minor &rest body)
-  (list 'if (or (> emacs-major-version major) (and (= emacs-major-version major) (> emacs-minor-version minor))) (cons 'progn body))
- )
-
-(WhenEmacsOlderThan 22 3
+(WhenEmacsOlderThan 22 2
   (setq disabled-command-hook nil)
  )
 
-(WhenEmacsNewerThan 22 2
+(WhenEmacsNewerThan 22 1
   (setq disabled-command-function nil)
  )
 
@@ -35,7 +28,20 @@
 
 (load-library "ediff-trees")
 (require 'ido)
-(require 'p4)
+(ido-mode 'both) ;; for buffers and files
+(setq
+  ido-save-directory-list-file (concat user-emacs-directory "ido.last")
+  ido-enable-tramp-completion nil
+  ido-case-fold  t
+  ido-enable-last-directory-history t
+  ido-max-work-directory-list 30
+  ido-max-work-file-list      50
+  ido-use-filename-at-point nil
+  ido-use-url-at-point nil
+  ido-enable-flex-matching nil
+  ido-confirm-unique-completion t
+ )
+
 (require 'fic-mode)
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)

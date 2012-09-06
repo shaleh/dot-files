@@ -27,6 +27,9 @@
 
 ;; functions
 (my/load-file (concat user-emacs-directory "my-lisp/functions.el"))
+;; macros
+;;(my/load-file (concat user-emacs-directory "my-lisp/macros.el"))
+(require 'my-macros)
 
 ;; configs
 (let ((default-directory (concat user-emacs-directory
