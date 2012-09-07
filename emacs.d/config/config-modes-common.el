@@ -6,11 +6,12 @@
    )
  )
 
+(show-paren-mode 1)
+
 (setq
       global-subword-mode 1
       search-highlight t         ;; highlight when searching
       query-replace-highlight t  ;; and replacing
-      show-paren-mode 1
  )
 (setq-default indent-tabs-mode nil)
 (setq-default show-trailing-whitespace t)
@@ -62,6 +63,7 @@
  )
 
 (autoload 'ack "my-ack" "my ack function" t)
+(autoload 'magit-status "magit" nil t)
 
 (defun my/enable-tab-mode ()
   (interactive)
