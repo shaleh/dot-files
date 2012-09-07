@@ -1,3 +1,14 @@
+;; I like that load-file loads exactly the file I request when a path is used
+;; but I want to use compiled files if they exist.
+(defun my/load-file (filename)
+  (let ((elc (concat (file-name-sans-extension filename) ".elc")))
+    (if (file-exists-p elc)
+        (load-file elc)
+      (load-file filename)
+     )
+   )
+)
+
 (defun my/kill-other-buffers ()
   "Kill all other buffers."
   (interactive)
@@ -47,3 +58,5 @@
      )
    )
  )
+
+(provide 'my-functions)

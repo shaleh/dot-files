@@ -23,4 +23,20 @@
     )
  )
 
+(defmacro WhenOSX (&rest body)
+  `(if (eq system-type 'darwin)
+       (progn ,@body)
+     nill
+    )
+ )
+
+(defmacro WhenUnix (&rest body)
+  `(cond
+      ((or (eq system-type 'ms-dos)
+           (eq system-type 'windows-nt))
+       nil)
+      (t (progn ,@body))
+    )
+ )
+
 (provide 'my-macros)

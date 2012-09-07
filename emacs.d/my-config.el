@@ -1,19 +1,25 @@
+(let ((default-directory (concat user-emacs-directory
+			    (convert-standard-filename "my-lisp/"))))
+   (normal-top-level-add-to-load-path '("."))
+   (normal-top-level-add-subdirs-to-load-path))
+
+(require 'my-macros)
+(require 'my-functions)
+
 (eval-when-compile (require 'cl))
 (setq tramp-mode nil)
 
-(defvar my/home-dir (concat (expand-file-name "~") "/"))
-(defvar my/bin-dir (concat my/home-dir "bin/"))
+(WhenUnix
+  (defvar my/home-dir (concat (expand-file-name "~") "/"))
+  (defvar my/bin-dir (concat my/home-dir "bin/"))
+ )
 
-;; I like that load-file loads exactly the file I request when a path is used
-;; but I want to use compiled files if they exist.
-(defun my/load-file (filename)
-  (let ((elc (concat (file-name-sans-extension filename) ".elc")))
-    (if (file-exists-p elc)
-        (load-file elc)
-      (load-file filename)
-     )
+(WhenOSX
+  (setenv "PATH" (concat my/bin-dir path-separator
+                         "/usr/local/bin" path-separator
+                         (getenv "PATH"))
    )
-)
+ )
 
 ;; find open source packages
 (let ((default-directory (concat user-emacs-directory
@@ -21,22 +27,11 @@
    (normal-top-level-add-to-load-path '("."))
    (normal-top-level-add-subdirs-to-load-path))
 
-(let ((default-directory (concat user-emacs-directory
-			    (convert-standard-filename "my-lisp/"))))
-   (normal-top-level-add-to-load-path '("."))
-   (normal-top-level-add-subdirs-to-load-path))
-
 (byte-recompile-directory user-emacs-directory 0)
-
-;; functions
-(my/load-file (concat user-emacs-directory "my-lisp/functions.el"))
-;; macros
-;;(my/load-file (concat user-emacs-directory "my-lisp/macros.el"))
-(require 'my-macros)
 
 ;; configs
 (let ((default-directory (concat user-emacs-directory
-			    (convert-standard-filename "config/")))
+                                 (convert-standard-filename "config/")))
       )
   (my/load-file "load-my-config.el")
  )
