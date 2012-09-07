@@ -3,7 +3,9 @@
 
 ;; load themes
 (require 'color-theme)
-(color-theme-initialize)
+(when (fboundp 'color-theme-initialize)
+   (color-theme-initialize) ; depends on where color-theme came from
+ )
 (require 'color-theme-solarized)
 (color-theme-solarized-dark)
 

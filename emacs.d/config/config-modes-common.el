@@ -1,5 +1,10 @@
 (require 'my-macros)
 
+(WhenEmacsOlderThan 23 2
+  (when (not (fboundp 'global-subword-mode))
+    (require 'subword)
+   )
+ )
 (global-subword-mode 1)
 
 (setq search-highlight t         ;; highlight when searching
