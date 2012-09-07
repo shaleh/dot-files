@@ -65,6 +65,8 @@
 (autoload 'ack "my-ack" "my ack function" t)
 (autoload 'magit-status "magit" nil t)
 
+(add-hook 'text-mode-hook (lambda () (flyspell-mode 1)))
+
 (defun my/enable-tab-mode ()
   (interactive)
   (setq indent-tabs-mode t))
