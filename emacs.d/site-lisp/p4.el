@@ -64,24 +64,10 @@
 
 ;;; Code:
 
+(defvar p4-running-xemacs (featurep 'xemacs))
+(defvar p4-running-emacs (not (featurep 'xemacs)))
+
 (defvar p4-emacs-version "10.6" "The Current P4-Emacs Integration Revision.")
-
-;; Find out what type of emacs we are running in. We will be using this
-;; quite a few times in this program.
-(eval-and-compile
-  (defvar p4-running-emacs nil
-    "If the current Emacs is not XEmacs, then, this is non-nil.")
-  (defvar p4-running-xemacs nil
-    "If the current Emacs is XEmacs/Lucid, then, this is non-nil.")
-  (if (string-match "XEmacs\\|Lucid" emacs-version)
-      (setq p4-running-xemacs t)
-    (setq p4-running-emacs t)))
-
-;; Pick up a couple of missing function defs
-(if p4-running-xemacs
-    (eval-when-compile
-      (require 'timer)
-      (require 'dired)))
 
 (defvar p4-emacs-maintainer
   "p4.el maintainers <p4el-bugs@lists.sourceforge.net>"
@@ -89,29 +75,15 @@
 
 (defvar p4-web-page "http://p4el.sourceforge.net/" "The home of p4.el.")
 
-;; For flavors of Emacs which don't define `defgroup' and `defcustom'.
-(eval-when-compile
-  (if (not (fboundp 'defgroup))
-      (defmacro defgroup (sym memb doc &rest args)
-	"Null macro for defgroup in all versions of Emacs that don't define
-defgroup"
-	t))
-  (if (not (fboundp 'defcustom))
-      (defmacro defcustom (sym val doc &rest args)
-	"Macro to alias defcustom to defvar in all versions of Emacs that
-don't define defcustom"
-	`(defvar ,sym ,val ,doc))))
-
 (defgroup p4 nil "Perforce VC System." :group 'tools)
 
 ;; This can be set to wherever 'p4' lies using p4-set-p4-executable
-(eval-and-compile
-  (defun p4-windows-os ()
-    (memq system-type '(ms-dos windows-nt)))
+(defun p4-windows-os ()
+  (memq system-type '(ms-dos windows-nt)))
 
-  (defcustom p4-executable
-    (let ((lst (append
-		exec-path
+(defcustom p4-executable
+  (let ((lst (append
+                exec-path
 		(list "/usr/local/bin/p4"
 		      (concat (getenv "HOME") "/bin/p4")
 		      "p4")))
@@ -130,10 +102,11 @@ To set this, use the function  `p4-set-p4-executable' or `customize'"
     :type 'string
     :group 'p4)
 
-  (defcustom p4-cygpath-exec "cygpath" "Path to cygpath binary on cygwin
+(defcustom p4-cygpath-exec "cygpath" "Path to cygpath binary on cygwin
 systems."
     :type 'string
-    :group 'p4))
+    :group 'p4)
+
 ;; This is a string with default arguments to pass to "p4 diff",
 ;; "p4 diff2", "p4 describe", etc.
 (defcustom p4-default-diff-options "-du"
@@ -194,8 +167,7 @@ command."
   :type 'sexp
   :group 'p4)
 
-(eval-and-compile
-  (defvar p4-output-buffer-name "*P4 Output*" "P4 Output Buffer."))
+(defvar p4-output-buffer-name "*P4 Output*" "P4 Output Buffer.")
 
 ;; Set this variable in .emacs if you want p4-set-client-name to complete
 ;; your client name for you.
@@ -447,8 +419,7 @@ arguments to p4 commands."
 ;;; All functions start here.
 
 ;; A generic function that we use to execute p4 commands
-(eval-and-compile
-  (defun p4-exec-p4 (output-buffer args &optional clear-output-buffer)
+(defun p4-exec-p4 (output-buffer args &optional clear-output-buffer)
     "Internal function called by various p4 commands.
 Executes p4 in the current buffer's current directory
 with output to a dedicated output buffer.
@@ -477,14 +448,15 @@ Does auto re-highlight management (whatever that is)."
 		 (boundp 'hilit-auto-rehighlight))
 	    (setq hilit-auto-rehighlight nil))
 	result)))
-  (defun p4-call-p4-here (&rest args)
+
+(defun p4-call-p4-here (&rest args)
     "Internal function called by various p4 commands.
 Executes p4 in the current buffer (generally a temp)."
     (apply 'call-process (p4-check-p4-executable) nil
 	   t
 	   nil			; update display?
 	   "-d" default-directory  ;override "PWD" env var
-	   args)))
+	   args))
 
 (defun p4-push-window-config ()
   "Push the current window configuration on the `p4-window-config-stack'
@@ -517,8 +489,7 @@ the last popped element to restore the window configuration."
 (defalias 'p4-toggle-vc-mode-off 'p4-toggle-vc-mode)
 (defalias 'p4-toggle-vc-mode-on 'p4-toggle-vc-mode)
 
-(eval-and-compile
-  (defvar p4-menu-def
+(defvar p4-menu-def
     '(["Specify Arguments..." universal-argument t]
       ["--" nil nil]
       ["Add Current to P4" p4-add
@@ -624,14 +595,14 @@ the last popped element to restore the window configuration."
 		 (setq separator-number (1+ separator-number))))
 	     (setq m (cdr m))))))
 
-  (defun p4-depot-output (command &optional args)
+(defun p4-depot-output (command &optional args)
     "Executes p4 command inside a buffer.
 Returns the buffer."
     (let ((buffer (generate-new-buffer p4-output-buffer-name)))
       (p4-exec-p4 buffer (cons command args) t)
       buffer))
 
-  (defun p4-check-p4-executable ()
+(defun p4-check-p4-executable ()
     "Check if the `p4-executable' is nil, and if so, prompt the user for a
 valid `p4-executable'."
     (interactive)
@@ -639,7 +610,7 @@ valid `p4-executable'."
 	(call-interactively 'p4-set-p4-executable)
       p4-executable))
 
-  (defun p4-menu-add ()
+(defun p4-menu-add ()
     "To add the P4 menu bar button for files that are already not in
 the P4 depot or in the current client view.."
     (interactive)
@@ -649,7 +620,7 @@ the P4 depot or in the current client view.."
 	   (easy-menu-add (p4-mode-menu "P4"))))
     t)
 
-  (defun p4-help-text (cmd text)
+(defun p4-help-text (cmd text)
     (if cmd
 	(let ((buf (generate-new-buffer p4-output-buffer-name))
 	      (help-text ""))
@@ -661,8 +632,8 @@ the P4 depot or in the current client view.."
 	  (concat text help-text))
       text))
 
-  ;; To set the path to the p4 executable
-  (defun p4-set-p4-executable (p4-exe-name)
+;; To set the path to the p4 executable
+(defun p4-set-p4-executable (p4-exe-name)
     "Set the path to the correct P4 Executable.
 
 To set this as a part of the .emacs, add the following to your .emacs:
@@ -673,7 +644,7 @@ To set this as a part of the .emacs, add the following to your .emacs:
 Argument P4-EXE-NAME The new value of the p4 executable, with full path."
     (interactive "fFull path to your P4 executable: " )
     (setq p4-executable p4-exe-name)
-    p4-executable))
+    p4-executable)
 
 ;; The kill-buffer hook for p4.
 (defun p4-kill-buffer-hook ()
