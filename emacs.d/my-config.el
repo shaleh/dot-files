@@ -2,7 +2,7 @@
 (setq tramp-mode nil)
 
 (defvar my/home-dir (concat (expand-file-name "~") "/"))
-(defvar my/bin-dir (concat home-dir "bin/"))
+(defvar my/bin-dir (concat my/home-dir "bin/"))
 
 ;; I like that load-file loads exactly the file I request when a path is used
 ;; but I want to use compiled files if they exist.
