@@ -4,6 +4,7 @@
 (my/load-file "./config-keys.el")
 
 (my/load-file "./config-modes-common.el")
+(my/load-file "./config-programming-common.el")
 
 (my/load-file "./config-c.el")
 

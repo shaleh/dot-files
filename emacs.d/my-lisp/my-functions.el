@@ -73,6 +73,7 @@
 
 (defun my/resize-frame-max-height ()
   "Resize frame to max height based on screen res"
+  (interactive)
   (set-frame-size (selected-frame) (frame-width) (/ (display-pixel-height) (frame-char-height)))
  )
 
