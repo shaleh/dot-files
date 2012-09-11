@@ -85,11 +85,13 @@
 (require 'diff-mode)
 
 ;; Silences byte-compiler warnings
-(eval-when-compile  (require 'view))
-(declare-function view-mode 'view)
-(eval-when-compile (require 'iswitchb))
-(eval-when-compile (require 'ido))
-(eval-when-compile (require 'ediff))
+(eval-when-compile
+(require 'view)
+(when (fboundp 'declare-function)
+  (declare-function view-mode 'view))
+(require 'iswitchb)
+(require 'ido)
+(require 'ediff))
 
 ;; Dummy to be used by the defcustoms when first loading the file.
 (eval-when (load eval)
@@ -3286,7 +3288,8 @@ PREPEND-REMOTE-NAME is non-nil."
    (t
     (run-hook-with-args-until-success 'magit-remote-string-hook))))
 
-(declare-function magit--bisect-info-for-status "magit-bisect" (branch))
+(when (fboundp 'declare-function)
+  (declare-function magit--bisect-info-for-status "magit-bisect" (branch)))
 
 (defun magit-refresh-status ()
   (magit-create-buffer-sections

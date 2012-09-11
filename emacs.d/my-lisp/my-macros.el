@@ -26,7 +26,7 @@
 (defmacro WhenOSX (&rest body)
   `(if (eq system-type 'darwin)
        (progn ,@body)
-     nill
+     nil
     )
  )
 
