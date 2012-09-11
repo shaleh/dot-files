@@ -7,3 +7,6 @@
 (global-set-key (kbd "C-<end>") 'end-of-buffer)
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "C-x C-r") 'my/recentf-ido-find-file)
+(global-set-key (kbd "M-y") 'kill-ring-ido) ; replace usual kill-ring-pop
+(global-set-key (kbd "<M-up>") 'my/move-line-up)
+(global-set-key (kbd "<M-down>") 'my/move-line-down)
