@@ -60,8 +60,6 @@
 
 (add-to-list 'auto-mode-alist '("\\.dot\\'" . graphviz-dot-mode)
  )
-(add-to-list 'auto-mode-alist '("\\.thrift\\'" . thrift-mode)
- )
 
 (autoload 'ack "my-ack" "my ack function" t)
 (autoload 'magit-status "magit" nil t)

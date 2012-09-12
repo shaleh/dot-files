@@ -1,6 +1,3 @@
-(add-hook 'thrift-mode-hook
-  (lambda ()
-    (turn-on-fic-mode)
-    (flyspell-prog-mode)
-   )
- )
+(add-to-list 'auto-mode-alist '("\\.thrift\\'" . thrift-mode)
+             )
+(add-hook 'thrift-mode-hook 'my/common-programming-hook)
