@@ -55,7 +55,6 @@
 (setq recentf-save-file (concat user-emacs-directory "state/recentf"))
 
 (autoload 'ediff-trees "ediff-trees" "ediff-trees" t)
-(autoload 'linum-mode "linum" "mode for line numbers" t)
 (autoload 'pwsafe "pwsafe" "load pwsafe" t)
 
 (add-to-list 'auto-mode-alist '("\\.dot\\'" . graphviz-dot-mode)

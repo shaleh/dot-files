@@ -1,9 +1,10 @@
-(autoload 'linum-mode "linum" "mode for line numbers" t)
+(autoload 'sperry-linum-mode "sperry-linum" "mode for line numbers" t)
+(setq-default sperry-linum-margin-padding 1)
 
 (defun my/common-programming-hook ()
    (turn-on-fic-mode)
    (flyspell-prog-mode)
-   (linum-mode)
+   (sperry-linum-mode)
    (add-to-list 'my/indented-modes major-mode)
  )
 
