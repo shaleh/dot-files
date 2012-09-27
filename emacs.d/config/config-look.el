@@ -12,6 +12,11 @@
       column-number-mode t
  )
 
+(WhenOSX
+   (my/resize-frame-max-height)
+   (my/resize-frame-wide)
+ )
+
 ;; load themes
 (require 'color-theme)
 (when (fboundp 'color-theme-initialize)

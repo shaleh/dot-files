@@ -1,6 +1,5 @@
-;;      (setenv "PATH" (concat (getenv PATH) ":/usr/local/bin"))
-
-(autoload 'eshell "eshell" "eshell mode" t)
+(require 'eshell)
+(require 'em-smart)
 
 (defun my/eshell-maybe-bol ()
   (interactive)
@@ -15,14 +14,18 @@
 
 (add-hook 'eshell-mode-hook
    '(lambda nil
-      ;;(eshell/export "EPOCROOT=\\Paragon\\")
+        (eshell/export "EDITOR=~/bin/edit")
         (eshell/addpath my/bin-dir "/usr/local/bin")
         (setq show-trailing-whitespace nil)
         (local-set-key (kbd "C-a") 'my/eshell-maybe-bol)
+        (setq yas--dont-activate t)
       )
  )
 
 (setq eshell-directory-name (concat user-emacs-directory "eshell")
       eshell-history-file-name (concat user-emacs-directory "state/eshell-history")
       eshell-last-dir-ring-file-name (concat user-emacs-directory "state/eshell-lastdir")
+      eshell-where-to-jump 'begin
+      eshell-review-quick-commands nil
+      eshell-smart-space-goes-to-end t
  )

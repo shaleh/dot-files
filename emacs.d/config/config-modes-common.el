@@ -54,11 +54,15 @@
 (recentf-mode t)
 (setq recentf-save-file (concat user-emacs-directory "state/recentf"))
 
+(WhenOSX
+   (setq ispell-program-name "/usr/local/bin/aspell")
+ )
+
 (autoload 'ediff-trees "ediff-trees" "ediff-trees" t)
 (autoload 'pwsafe "pwsafe" "load pwsafe" t)
 
-(add-to-list 'auto-mode-alist '("\\.dot\\'" . graphviz-dot-mode)
- )
+(add-to-list 'auto-mode-alist '("\\.dot\\'" . graphviz-dot-mode))
+(add-to-list 'auto-mode-alist '("\\.hex\\'" . hexl-mode))
 
 (autoload 'ack "my-ack" "my ack function" t)
 (autoload 'magit-status "magit" nil t)
