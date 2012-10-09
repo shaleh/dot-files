@@ -101,13 +101,13 @@
 (defun my/move-line-up (n)
   "Move the current line up by N lines."
   (interactive "p")
-  (move-line (if (null n) -1 (- n)))
+  (my/move-line (if (null n) -1 (- n)))
  )
 
 (defun my/move-line-down (n)
   "Move the current line down by N lines."
   (interactive "p")
-  (move-line (if (null n) 1 n))
+  (my/move-line (if (null n) 1 n))
  )
 
 (provide 'my-functions)
