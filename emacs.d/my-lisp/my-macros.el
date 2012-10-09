@@ -5,13 +5,22 @@
     )
  )
 
+(defun my/emacs-older-than-p (major minor)
+   (or (< emacs-major-version major) (and (= emacs-major-version major)
+                                          (< emacs-minor-version minor)))
+ )
+
 (defmacro WhenEmacsOlderThan (major minor &rest body)
-  `(if (or (< emacs-major-version ,major) (and (= emacs-major-version ,major)
-                                               (< emacs-minor-version ,minor))
-        )
-      (progn ,@body)
-     nil
+  `(when (my/emacs-older-than-p ,major ,minor)
+     (progn ,@body)
     )
+ )
+
+(defun SetWhenEmacsOlderThan (major minor name value)
+  (when (and (my/emacs-older-than-p major minor)
+             (boundp name))
+    (set name value)
+   )
  )
 
 (defmacro WhenEmacsNewerThan (major minor &rest body)

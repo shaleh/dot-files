@@ -23,9 +23,7 @@
   (global-hl-line-mode t)
  )
 
-(WhenEmacsOlderThan 22 2
-  (setq disabled-command-hook nil)
- )
+(SetWhenEmacsOlderThan 22 1 'disabled-command-hook nil)
 
 (WhenEmacsNewerThan 22 1
   (setq disabled-command-function nil)
