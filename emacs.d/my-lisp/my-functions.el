@@ -60,10 +60,17 @@
  )
 
 (defun my/resize-frame-wide ()
-  "Resize the current frame to 120 wide"
+  ;; this was 120, but it does not leave room for line numbers
+  "Resize the current frame to 125 wide"
   (interactive)
-  (set-frame-size (selected-frame) 120 (frame-height))
+  (set-frame-size (selected-frame) 125 (frame-height))
  )
+
+(defun my/resize-frame-tall ()
+  "tall"
+  (interactive)
+  (set-frame-size (selected-frame) (frame-width) 65)
+  )
 
 (defun my/resize-frame-normal ()
   "Resize the current frame to 80 wide, leave height alone."

@@ -1,3 +1,6 @@
+(require 'my-functions)
+(require 'my-macros)
+
 (when (fboundp 'tool-bar-mode)
    (tool-bar-mode -1)
  )
@@ -13,7 +16,9 @@
  )
 
 (WhenOSX
-   (my/resize-frame-max-height)
+   (set-face-attribute 'default nil
+             :family "Inconsolata" :height 140 :weight 'normal)
+   (my/resize-frame-tall)
    (my/resize-frame-wide)
  )
 
