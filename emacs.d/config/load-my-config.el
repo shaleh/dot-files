@@ -14,6 +14,7 @@
 
 ; coding
 (my/load-file "./config-c.el")
+(my/load-file "./config-django.el")
 (my/load-file "./config-elisp.el")
 (my/load-file "./config-haskell.el")
 (my/load-file "./config-java.el")
