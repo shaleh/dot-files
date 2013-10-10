@@ -5,6 +5,7 @@
    (turn-on-fic-mode)
    (flyspell-prog-mode)
    (sperry-linum-mode)
+   (subword-mode)
    (add-to-list 'my/indented-modes major-mode)
  )
 

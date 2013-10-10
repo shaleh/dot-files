@@ -20,6 +20,7 @@
 (my/load-file "./config-elisp.el")
 (my/load-file "./config-haskell.el")
 (my/load-file "./config-java.el")
+(my/load-file "./config-javascript.el")
 (my/load-file "./config-perl-mode.el")
 (my/load-file "./config-python.el")
 (my/load-file "./config-shell-mode.el")

@@ -1,13 +1,13 @@
 default: catch
 
 catch:
-	@echo "Options:\n * install\n * check-changes"
+	@echo "Options:\n * check prereqs \n * install\n * check-changes"
 
 check-prereqs:
 	@echo "dot?"    && which dot    && test -x `which dot`
 	@echo "pwsafe?" && which pwsafe && test -x `which pwsafe`
 
-install: check-prereqs
+install:
 	@if [ ! -x ~/.emacs ]; then \
             cp dot.emacs ~/.emacs; \
         else \

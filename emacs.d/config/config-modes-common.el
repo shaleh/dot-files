@@ -1,15 +1,8 @@
 (require 'my-macros)
 
-(WhenEmacsOlderThan 23 2
-  (when (not (fboundp 'global-subword-mode))
-    (require 'subword)
-   )
- )
-
 (show-paren-mode 1)
 
 (setq
-      global-subword-mode 1
       search-highlight t         ;; highlight when searching
       query-replace-highlight t  ;; and replacing
  )
