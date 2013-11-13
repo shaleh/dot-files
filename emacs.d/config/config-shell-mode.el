@@ -9,7 +9,8 @@
   "Shell arguments to invoke syntax checking.")
 
 (defcustom my/flymake-shell-err-line-pattern-re
-  '(("^\\(.+\\): line \\([0-9]+\\): \\(.+\\)$" 1 2 nil 3)))
+  '(("^\\(.+\\): line \\([0-9]+\\): \\(.+\\)$" 1 2 nil 3))
+  "Shell error pattern")
 
 (defun flymake-shell-init ()
   (let* ((temp-file (flymake-init-create-temp-buffer-copy
