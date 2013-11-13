@@ -10,3 +10,6 @@
 [submodule "emacs.d/site-lisp/django-mode"]
 	path = emacs.d/site-lisp/django-mode
 	url = https://github.com/myfreeweb/django-mode
+[submodule "emacs.d/site-lisp/haskell-mode"]
+	path = emacs.d/site-lisp/haskell-mode
+	url = https://github.com/haskell/haskell-mode
