@@ -1,4 +1,4 @@
-(defvar ack-command "/usr/local/bin/ack --all-types --nogroup --nocolor --smart-case ")
+(defvar ack-command "/usr/local/bin/ack --nogroup --nocolor --smart-case ")
 (defvar ack-history nil)
 (defvar ack-host-defaults-alist nil)
 (defun ack ()
