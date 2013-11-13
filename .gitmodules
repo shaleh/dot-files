@@ -19,3 +19,6 @@
 [submodule "emacs.d/site-lisp/magit"]
 	path = emacs.d/site-lisp/magit
 	url = https://github.com/magit/magit
+[submodule "emacs.d/site-lisp/color-theme-solarized"]
+	path = emacs.d/site-lisp/color-theme-solarized
+	url = https://github.com/sellout/emacs-color-theme-solarized
