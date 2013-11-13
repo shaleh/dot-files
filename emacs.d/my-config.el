@@ -38,5 +38,4 @@
 (setq custom-file (concat user-emacs-directory "my-custom.el"))
 (my/load-file custom-file)
 
-(server-start)
 (eshell)

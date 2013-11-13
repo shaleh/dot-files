@@ -1,5 +1,11 @@
 (require 'my-functions)
 
+; Need these for busted remote sessions
+(define-key input-decode-map "\e\eOA" [(meta up)])
+(define-key input-decode-map "\e\eOB" [(meta down)])
+(define-key input-decode-map "\e\e[1~" [(meta home)])
+(define-key input-decode-map "\e\e[4~" [(meta end)])
+
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "<home>") 'beginning-of-line)
@@ -15,15 +21,3 @@
 (global-set-key (kbd "M-<down>") 'my/move-line-down)
 (global-set-key (kbd "C-c #") 'comment-region) ; use C-u C-c # to uncomment
 (global-set-key (kbd "C-c e") 'my/eval-and-replace)
-
-;; make C-x k work for emacsclient sessions too.
-(add-hook 'server-switch-hook
-  (lambda ()
-    (when (current-local-map)
-      (use-local-map (copy-keymap (current-local-map)))
-     )
-    (when server-buffer-clients
-      (local-set-key (kbd "C-x k") 'server-edit)
-     )
-   )
- )

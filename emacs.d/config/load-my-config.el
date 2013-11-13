@@ -29,3 +29,5 @@
 (WhenAtWork
   (my/load-file "./config-work.el")
  )
+
+(my/load-file "./config-server.el")
