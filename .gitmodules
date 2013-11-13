@@ -7,3 +7,6 @@
 [submodule "emacs.d/site-lisp/coffee-mode"]
 	path = emacs.d/site-lisp/coffee-mode
 	url = https://github.com/defunkt/coffee-mode
+[submodule "emacs.d/site-lisp/django-mode"]
+	path = emacs.d/site-lisp/django-mode
+	url = https://github.com/myfreeweb/django-mode
