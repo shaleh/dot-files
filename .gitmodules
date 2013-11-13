@@ -1,0 +1,6 @@
+[submodule "emacs.d/site-lisp/yasnippet"]
+	path = emacs.d/site-lisp/yasnippet
+	url = https://github.com/capitaomorte/yasnippet
+[submodule "emacs.d/site-lisp/p4"]
+	path = emacs.d/site-lisp/p4
+	url = https://github.com/gareth-rees/p4.el
