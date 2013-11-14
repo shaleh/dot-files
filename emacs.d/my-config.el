@@ -1,7 +1,10 @@
+;; N.B. use convert-standard-filename to help transition between Unix and Win
+
 (let ((default-directory (concat user-emacs-directory
 			    (convert-standard-filename "my-lisp/"))))
    (normal-top-level-add-to-load-path '("."))
-   (normal-top-level-add-subdirs-to-load-path))
+   (normal-top-level-add-subdirs-to-load-path)
+ )
 
 (require 'my-macros)
 (require 'my-functions)
@@ -21,11 +24,13 @@
    )
  )
 
+(defvar my-site-lisp (concat user-emacs-directory (convert-standard-filename "site-lisp/")))
+
 ;; find open source packages
-(let ((default-directory (concat user-emacs-directory
-			    (convert-standard-filename "site-lisp/"))))
+(let ((default-directory my-site-lisp))
    (normal-top-level-add-to-load-path '("."))
-   (normal-top-level-add-subdirs-to-load-path))
+   (normal-top-level-add-subdirs-to-load-path)
+ )
 
 ;; configs
 (let ((default-directory (concat user-emacs-directory
@@ -39,3 +44,4 @@
 (my/load-file custom-file)
 
 (eshell)
+;; Emacs is now up and running
