@@ -22,9 +22,9 @@
       )
  )
 
-(setq eshell-directory-name (concat user-emacs-directory "eshell")
-      eshell-history-file-name (concat user-emacs-directory "state/eshell-history")
-      eshell-last-dir-ring-file-name (concat user-emacs-directory "state/eshell-lastdir")
+(setq eshell-directory-name (concat user-emacs-directory (convert-standard-filename "eshell"))
+      eshell-history-file-name (concat user-emacs-directory (convert-standard-filename "state/eshell-history"))
+      eshell-last-dir-ring-file-name (concat user-emacs-directory (convert-standard-filename "state/eshell-lastdir"))
       eshell-where-to-jump 'begin
       eshell-review-quick-commands nil
       eshell-smart-space-goes-to-end t

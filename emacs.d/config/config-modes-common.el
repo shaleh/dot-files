@@ -9,7 +9,7 @@
 (setq-default indent-tabs-mode nil)
 (setq-default show-trailing-whitespace t)
 
-(setq auto-save-list-file-prefix (concat user-emacs-directory "state/auto-save-list/.saves-"))
+(setq auto-save-list-file-prefix (concat user-emacs-directory (convert-standard-filename "state/auto-save-list/.saves-")))
 
 ;; hl-line: highlight the current line
 (when (fboundp 'global-hl-line-mode)
@@ -25,7 +25,7 @@
 (require 'ido)
 (ido-mode 'both) ;; for buffers and files
 (setq
-  ido-save-directory-list-file (concat user-emacs-directory "state/ido.last")
+  ido-save-directory-list-file (concat user-emacs-directory (convert-standard-filename "state/ido.last"))
   ido-enable-tramp-completion nil
   ido-case-fold  t
   ido-enable-last-directory-history t
@@ -43,7 +43,7 @@
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 (require 'recentf)
 (recentf-mode t)
-(setq recentf-save-file (concat user-emacs-directory "state/recentf"))
+(setq recentf-save-file (concat user-emacs-directory (convert-standard-filename "state/recentf")))
 
 (WhenOSX
    (setq ispell-program-name "/usr/local/bin/aspell")
