@@ -6,11 +6,23 @@
   '(help-at-pt-display-when-idle '(flymake-overlay))
  )
 
+(defun my/enable-subword-mode ()
+  "Enable with subword or c-subword-mode"
+  (interactive)
+  (if (fboundp 'subword-mode)
+      (subword-mode)
+    (if (fboundp 'c-subword-mode)
+        (c-subword-mode)
+     )
+   )
+ )
+
 (defun my/common-programming-hook ()
    (turn-on-fic-mode)
    (flyspell-prog-mode)
    (sperry-linum-mode)
-   (subword-mode)
+   (my/enable-subword-mode)
+   (local-set-key (kbd "C-a") 'my/move-beginning-of-line)
    (add-to-list 'my/indented-modes major-mode)
  )
 

@@ -1,3 +1,14 @@
+(defun my/move-beginning-of-line ()
+  "move to beginning of line, or indentation"
+  (interactive)
+  (let ((pt (point)))
+    (beginning-of-line-text)
+    (if (eq pt (point))
+        (beginning-of-line)
+      )
+    )
+  )
+
 ;; I like that load-file loads exactly the file I request when a path is used
 ;; but I want to use compiled files if they exist.
 (defun my/load-file (filename)
