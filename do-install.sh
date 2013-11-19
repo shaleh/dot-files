@@ -17,4 +17,8 @@ cp_or_diff()
 cp_or_diff dot.emacs ~/.emacs
 cp_or_diff ackrc ~/.ackrc
 
+make -C emacs.d/site-lisp/haskell-mode all
+
 rsync -av --exclude '.git' emacs.d/ ~/.emacs.d/
+
+[ -d ~/.emacs.d/site-lisp/themes ] || mkdir ~/.emacs.d/site-lisp/themes
