@@ -29,3 +29,5 @@
       eshell-review-quick-commands nil
       eshell-smart-space-goes-to-end t
  )
+
+(setq eshell-aliases-file (concat eshell-directory-name "alias"))
