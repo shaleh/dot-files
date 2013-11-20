@@ -11,11 +11,6 @@
 
 (setq auto-save-list-file-prefix (concat user-emacs-directory (convert-standard-filename "state/auto-save-list/.saves-")))
 
-;; hl-line: highlight the current line
-(when (fboundp 'global-hl-line-mode)
-  (global-hl-line-mode t)
- )
-
 (SetWhenEmacsOlderThan 22 1 'disabled-command-hook nil)
 
 (WhenEmacsNewerThan 22 1
