@@ -1,6 +1,3 @@
-(require 'my-functions)
-(require 'my-macros)
-
 (when (fboundp 'tool-bar-mode)
    (tool-bar-mode -1)
  )

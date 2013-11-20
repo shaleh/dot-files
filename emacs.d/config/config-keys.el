@@ -1,5 +1,3 @@
-(require 'my-functions)
-
 ; Need these for busted remote sessions
 (define-key input-decode-map "\e\eOA" [(meta up)])
 (define-key input-decode-map "\e\eOB" [(meta down)])
