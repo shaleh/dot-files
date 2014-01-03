@@ -2,7 +2,7 @@
 
 do_bin_check()
 {
-    which ${item} && test -x `which ${item}`
+    which ${item} && test -x $(readlink -m $(which ${item}))
 }
 
 check_bin()
@@ -26,12 +26,11 @@ do_common()
     check_bin "aspell"
     check_bin "dot"
     check_bin "gcc"
-    check_bin "pwsafe"
 }
 
 do_linux()
 {
-    false
+    true
 }
 
 do_osx()
