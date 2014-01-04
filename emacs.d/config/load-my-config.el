@@ -22,6 +22,7 @@
 (my/load-file "./config-java.el")
 (my/load-file "./config-javascript.el")
 (my/load-file "./config-perl-mode.el")
+(my/load-file "./config-php-mode.el")
 (my/load-file "./config-python.el")
 (my/load-file "./config-shell-mode.el")
 (my/load-file "./config-thrift.el")
