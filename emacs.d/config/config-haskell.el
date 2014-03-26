@@ -3,10 +3,35 @@
              (concat my-site-lisp (convert-standard-filename "haskell-mode/"))
  )
 
+(add-hook 'align-load-hook
+  (lambda ()
+    (add-to-list 'align-rules-list
+                 '(haskell-types
+                   (regexp . "\\(\\s-+\\)\\(::\\|∷\\)\\s-+")
+                   (modes quote (haskell-mode literate-haskell-mode)))
+     )
+    (add-to-list 'align-rules-list
+                 '(haskell-assignment
+                   (regexp . "\\(\\s-+\\)=\\s-+")
+                   (modes quote (haskell-mode literate-haskell-mode)))
+     )
+    (add-to-list 'align-rules-list
+                 '(haskell-arrows
+                   (regexp . "\\(\\s-+\\)\\(->\\|→\\)\\s-+")
+                   (modes quote (haskell-mode literate-haskell-mode)))
+     )
+    (add-to-list 'align-rules-list
+                 '(haskell-left-arrows
+                   (regexp . "\\(\\s-+\\)\\(<-\\|←\\)\\s-+")
+                   (modes quote (haskell-mode literate-haskell-mode)))
+     )
+   )
+ )
+
 (add-hook 'haskell-mode-hook 'my/haskell-hook)
 
 (defun my/haskell-hook ()
-    (turn-on-haskell-simple-indent)
+    (turn-on-haskell-indentation)
 
     ;; Indent the below lines on columns after the current column.
     (define-key haskell-mode-map (kbd "C-<right>")

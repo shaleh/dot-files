@@ -19,3 +19,4 @@
 (global-set-key (kbd "M-<down>") 'my/move-line-down)
 (global-set-key (kbd "C-c #") 'comment-dwim) ; use C-u C-c # to uncomment
 (global-set-key (kbd "C-c e") 'my/eval-and-replace)
+(global-set-key (kbd "C-x a r") 'align-regexp)
