@@ -9,10 +9,10 @@ catch:
 	@echo " * check-prereqs"
 
 check-changes:
-	./check-changes.sh
+	sh ./check-changes.sh
 
 check-prereqs:
-	./check-prereqs.sh
+	sh ./check-prereqs.sh
 
 install: check-prereqs
-	./do-install.sh
+	sh ./do-install.sh
