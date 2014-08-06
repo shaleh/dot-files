@@ -1,0 +1,3 @@
+[submodule "emacs.d/site-lisp/cask"]
+	path = emacs.d/site-lisp/cask
+	url = https://shaleh@github.com/shaleh/cask
