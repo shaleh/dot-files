@@ -17,12 +17,15 @@
    )
  )
 
+(require 'indent-guide)
+
 (defun my/common-programming-hook ()
    (turn-on-fic-mode)
    (flyspell-prog-mode)
    (sperry-linum-mode)
    (my/enable-subword-mode)
    (hl-line-mode)
+   (indent-guide)
    (local-set-key (kbd "C-a") 'my/move-beginning-of-line)
    (add-to-list 'my/indented-modes major-mode)
  )

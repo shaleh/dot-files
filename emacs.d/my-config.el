@@ -32,6 +32,11 @@
    (normal-top-level-add-subdirs-to-load-path)
  )
 
+
+(require 'cask)
+(cask-initialize)
+(require 'pallet)
+
 ;; configs
 (let ((default-directory (concat user-emacs-directory
                                  (convert-standard-filename "config/")))

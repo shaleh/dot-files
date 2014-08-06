@@ -107,3 +107,11 @@
       (indent-region (region-beginning) (region-end) nil)
     )
   )
+
+
+(require 'achievements)
+(achievements-mode)
+
+(require 'keyfreq)
+(keyfreq-mode 1)
+(keyfreq-autosave-mode 1)
