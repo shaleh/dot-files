@@ -25,7 +25,7 @@
    (sperry-linum-mode)
    (my/enable-subword-mode)
    (hl-line-mode)
-   (indent-guide)
+   (indent-guide-mode)
    (local-set-key (kbd "C-a") 'my/move-beginning-of-line)
    (add-to-list 'my/indented-modes major-mode)
  )
