@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: argstr
+# key: argstr
+# binding: direct-keybinding
+# --
+parser.add_argument("--$1", help="$2")

@@ -1,0 +1,9 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: try
+# key: try
+# binding: direct-keybinding
+# --
+try:
+    $1
+except $2 as e:
+    $3

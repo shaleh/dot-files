@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: argb
+# key: argb
+# binding: direct-keybinding
+# --
+parser.add_argument("--$1", action="store_true", default=False, help="$2")

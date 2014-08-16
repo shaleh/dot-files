@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# name: addlogging
+# key: addlogging
+# --
+logger = logging.getLogger("")
+
+if args.log_file:
+    lh = logging.FileHandler(args.log_file)
+else:
+    lh = logging.StreamHandler()
+
+lh.setFormatter(logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
+
+logger.addHandler(lh)
+
+if args.debug:
+    logger.setLevel(logging.DEBUG)
+    args.verbose = True
+elif args.verbose:
+    logger.setLevel(logging.INFO)
+else:
+    logger.setLevel(logging.WARNING)

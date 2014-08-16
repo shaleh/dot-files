@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# Name: module-stanza
+# --
+${1:Title}
+${1:$(make-string (string-width text) ?\=)}
+
+.. automodule:: $2
+    :members:
+    :undoc-members:
+$0

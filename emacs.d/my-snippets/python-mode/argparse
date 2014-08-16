@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: argparse
+# key: argparse
+# binding: direct-keybinding
+# --
+parser = argparse.ArgumentParser(description=description)
