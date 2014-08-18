@@ -18,6 +18,7 @@
 (my/load-file "./config-c.el")
 (my/load-file "./config-elisp.el")
 (my/load-file "./config-haskell.el")
+(my/load-file "./config-idris.el")
 (my/load-file "./config-java.el")
 (my/load-file "./config-javascript.el")
 (my/load-file "./config-perl-mode.el")
