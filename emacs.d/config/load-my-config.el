@@ -17,9 +17,12 @@
 
 ; coding
 (my/load-file "./config-c.el")
+(my/load-file "./config-elisp.el")
+(my/load-file "./config-java.el")
 (my/load-file "./config-javascript.el")
 (my/load-file "./config-perl-mode.el")
 (my/load-file "./config-python.el")
+(my/load-file "./config-shell-mode.el")
 
 (WhenPersonal
   (my/load-file "./config-personal.el")

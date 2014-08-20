@@ -51,17 +51,3 @@
    (interactive)
    (setq-default tab-width 4)
  )
-
-(mapc
-  (lambda (hook)
-    (add-hook hook 'my/common-programming-hook)
-   )
-  '(c-mode-common-hook
-    emacs-lisp-mode-hook
-    graphviz-dot-mode-hook
-    java-mode-hook
-    js2-mode-hook
-    cperl-mode-hook
-    python-mode-hook
-    sh-mode-hook)
- )
