@@ -9,8 +9,6 @@
                          elpy
                          fic-mode
                          flycheck
-                         flycheck-cask
-                         flycheck-haskell
                          git-timemachine
                          google-this
                          graphviz-dot-mode
