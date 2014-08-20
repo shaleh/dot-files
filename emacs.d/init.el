@@ -35,8 +35,10 @@
 (setq package-user-dir (concat my-site-lisp "packaged"))
 
 (let ((default-directory (concat my-site-lisp "unpackaged")))
-   (normal-top-level-add-to-load-path '("."))
-   (normal-top-level-add-subdirs-to-load-path)
+  (when (file-directory-p default-directory)
+     (normal-top-level-add-to-load-path '("."))
+     (normal-top-level-add-subdirs-to-load-path)
+   )
  )
 
 (setq custom-file (concat user-emacs-directory "my-custom.el"))

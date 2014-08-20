@@ -1,7 +1,6 @@
 (require 'my-functions)
 
-(let ((my-package-list '(achievements
-                         erlang
+(let ((my-package-list '(erlang
                          haskell-mode
                          idris-mode
                          rust-mode
