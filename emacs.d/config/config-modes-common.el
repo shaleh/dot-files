@@ -1,5 +1,13 @@
 (require 'my-macros)
 
+(require 'ffap)
+(require 'fic-mode)
+(require 'ido)
+(require 'kill-ring-ido)
+(require 'recentf)
+(require 'uniquify)
+(require 'whole-line-or-region)
+
 (show-paren-mode 1)
 
 (setq
@@ -17,7 +25,6 @@
   (setq disabled-command-function nil)
  )
 
-(require 'ido)
 (ido-mode 'both) ;; for buffers and files
 (setq
   ido-save-directory-list-file (concat user-emacs-directory (convert-standard-filename "state/ido.last"))
@@ -30,13 +37,11 @@
   ido-use-url-at-point nil
   ido-enable-flex-matching nil
   ido-confirm-unique-completion t
+  ido-ignore-buffers (quote ("\\` " "*.+*"))
  )
-(require 'kill-ring-ido)
 
-(require 'fic-mode)
-(require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
-(require 'recentf)
+
 (recentf-mode t)
 (setq recentf-save-file (concat user-emacs-directory (convert-standard-filename "state/recentf")))
 
@@ -45,23 +50,11 @@
  )
 
 (autoload 'ediff-trees "ediff-trees" "ediff-trees" t)
-(autoload 'pwsafe "pwsafe" "load pwsafe" t)
 
 (add-to-list 'auto-mode-alist '("\\.dot\\'" . graphviz-dot-mode))
 (add-to-list 'auto-mode-alist '("\\.hex\\'" . hexl-mode))
 
-(autoload 'ack "my-ack" "my ack function" t)
-(autoload 'magit-status "magit" nil t)
-
 (add-hook 'text-mode-hook (lambda () (flyspell-mode 1)))
-
-(defun my/enable-tab-mode ()
-  (interactive)
-  (setq indent-tabs-mode t))
-
-(defun my/mk-tab-width-4 ()
-  (interactive)
-  (setq-default tab-width 4))
 
 
 ;; ;; Change cutting behavior:
@@ -91,27 +84,3 @@
 ;;      )
 ;;    )
 ;;   )
-
-(require 'whole-line-or-region)
-(defvar my/indented-modes '())
-
-;; auto-indent pasted code
-(defadvice yank (after indent-region activate)
-  (if (member major-mode my/indented-modes)
-      (indent-region (region-beginning) (region-end) nil)
-    )
-  )
-
-(defadvice yank-pop (after indent-region activate)
-  (if (member major-mode my/indented-modes)
-      (indent-region (region-beginning) (region-end) nil)
-    )
-  )
-
-
-(require 'achievements)
-(achievements-mode)
-
-(require 'keyfreq)
-(keyfreq-mode 1)
-(keyfreq-autosave-mode 1)

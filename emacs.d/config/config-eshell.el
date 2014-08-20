@@ -13,13 +13,13 @@
   )
 
 (add-hook 'eshell-mode-hook
-   '(lambda nil
-        (eshell/export "EDITOR=~/bin/edit")
-        (eshell/addpath my/bin-dir "/usr/local/bin")
-        (setq show-trailing-whitespace nil)
-        (local-set-key (kbd "C-a") 'my/eshell-maybe-bol)
-        (setq yas--dont-activate t)
-      )
+   (lambda ()
+     (eshell/export "EDITOR=~/bin/edit")
+     (eshell/addpath my/bin-dir "/usr/local/bin")
+     (setq show-trailing-whitespace nil)
+     (local-set-key (kbd "C-a") 'my/eshell-maybe-bol)
+     (setq yas--dont-activate t)
+    )
  )
 
 (setq eshell-directory-name (concat user-emacs-directory (convert-standard-filename "eshell"))
@@ -29,5 +29,3 @@
       eshell-review-quick-commands nil
       eshell-smart-space-goes-to-end t
  )
-
-(setq eshell-aliases-file (concat eshell-directory-name "alias"))

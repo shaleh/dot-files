@@ -1,3 +1,10 @@
+(defmacro WhenPersonal (&rest body)
+  `(if (not (file-exists-p (concat user-emacs-directory "work-stamp")))
+       (progn ,@body)
+     nil
+     )
+  )
+
 (defmacro WhenAtWork (&rest body)
   `(if (file-exists-p (concat user-emacs-directory "work-stamp"))
       (progn ,@body)

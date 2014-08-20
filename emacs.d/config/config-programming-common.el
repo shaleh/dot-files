@@ -1,6 +1,3 @@
-(autoload 'sperry-linum-mode "sperry-linum" "mode for line numbers" t)
-(setq-default sperry-linum-margin-padding 1)
-
 (custom-set-variables
   '(help-at-pt-timer-delay 0.9)
   '(help-at-pt-display-when-idle '(flymake-overlay))
@@ -22,13 +19,28 @@
 (defun my/common-programming-hook ()
    (turn-on-fic-mode)
    (flyspell-prog-mode)
-   (sperry-linum-mode)
+   (linum-mode)
    (my/enable-subword-mode)
    (hl-line-mode)
    (indent-guide-mode)
    (local-set-key (kbd "C-a") 'my/move-beginning-of-line)
    (add-to-list 'my/indented-modes major-mode)
  )
+
+(defvar my/indented-modes '())
+
+;; auto-indent pasted code
+(defadvice yank (after indent-region activate)
+  (if (member major-mode my/indented-modes)
+      (indent-region (region-beginning) (region-end) nil)
+    )
+  )
+
+(defadvice yank-pop (after indent-region activate)
+  (if (member major-mode my/indented-modes)
+      (indent-region (region-beginning) (region-end) nil)
+    )
+  )
 
 (defun my/enable-tab-mode ()
    (interactive)

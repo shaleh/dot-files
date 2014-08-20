@@ -1,3 +1,9 @@
+;; user-emacs-directory was added in v 23.
+(if (boundp 'user-emacs-directory)
+    nil
+  (defvar user-emacs-directory "~/.emacs.d/")
+  )
+
 ;; N.B. use convert-standard-filename to help transition between Unix and Win
 
 (let ((default-directory (concat user-emacs-directory
@@ -26,27 +32,30 @@
 
 (defvar my-site-lisp (concat user-emacs-directory (convert-standard-filename "site-lisp/")))
 
-;; find open source packages
-(let ((default-directory my-site-lisp))
+(setq package-user-dir (concat my-site-lisp "packaged"))
+
+(let ((default-directory (concat my-site-lisp "unpackaged")))
    (normal-top-level-add-to-load-path '("."))
    (normal-top-level-add-subdirs-to-load-path)
  )
 
-
-(require 'cask)
-(cask-initialize)
-(require 'pallet)
-
-;; configs
-(let ((default-directory (concat user-emacs-directory
-                                 (convert-standard-filename "config/")))
-      )
-  (my/load-file "load-my-config.el")
- )
-
-;; must come after the configs are loaded
 (setq custom-file (concat user-emacs-directory "my-custom.el"))
 (my/load-file custom-file)
 
-(eshell)
-;; Emacs is now up and running
+(add-hook 'after-init-hook
+  (lambda ()
+    ;; Barebones emacs is up. Now load required packages, all of my configuration, etc.
+    (let ((default-directory (concat user-emacs-directory
+                                   (convert-standard-filename "config/")))
+          )
+      (my/load-file "load-my-config.el")
+     )
+   )
+ )
+
+(add-hook 'emacs-startup-hook
+  (lambda ()
+    ;; Ok Emacs is fully up, start eshell
+    (eshell)
+   )
+ )

@@ -1,3 +1,4 @@
+(require 'package)
 (require 'thingatpt)
 
 (defun my/move-beginning-of-line ()
@@ -231,6 +232,12 @@
           (f (find-function f))
           (t (call-interactively 'find-function))
      )
+   )
+ )
+
+(defun my/require-package (package)
+  (unless (package-installed-p package)
+    (package-install package)
    )
  )
 

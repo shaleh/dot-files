@@ -1,5 +1,6 @@
 (require 'my-macros)
 
+(my/load-file "./config-packages.el")
 (my/load-file "./config-look.el")
 (my/load-file "./config-keys.el")
 
@@ -17,14 +18,15 @@
 ; coding
 (my/load-file "./config-c.el")
 (my/load-file "./config-elisp.el")
-(my/load-file "./config-haskell.el")
-(my/load-file "./config-idris.el")
 (my/load-file "./config-java.el")
 (my/load-file "./config-javascript.el")
 (my/load-file "./config-perl-mode.el")
 (my/load-file "./config-python.el")
 (my/load-file "./config-shell-mode.el")
-(my/load-file "./config-thrift.el")
+
+(WhenPersonal
+  (my/load-file "./config-personal.el")
+ )
 
 (WhenAtWork
   (my/load-file "./config-work.el")
