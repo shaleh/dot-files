@@ -17,7 +17,7 @@
      (eshell/export "EDITOR=~/bin/edit")
      (eshell/addpath my/bin-dir "/usr/local/bin")
      (setq show-trailing-whitespace nil)
-     (local-set-key (kbd "C-a") 'my/eshell-maybe-bol)
+     (local-set-key (kbd "C-a") 'eshell-bol)
      (setq yas--dont-activate t)
     )
  )
@@ -29,3 +29,13 @@
       eshell-review-quick-commands nil
       eshell-smart-space-goes-to-end t
  )
+
+(defun my/shell-here ()
+  (interactive)
+  (let ((cur default-directory))
+    (split-window-sensibly)
+    (other-window 1)
+    (eshell)
+    (eshell/cd cur)
+    )
+  )
