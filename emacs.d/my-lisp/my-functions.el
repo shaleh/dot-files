@@ -241,4 +241,9 @@
    )
  )
 
+(defun my/find-nth (str num)
+  (interactive "MString: \nNCount: ")
+  (search-forward str nil nil num)
+ )
+
 (provide 'my-functions)
