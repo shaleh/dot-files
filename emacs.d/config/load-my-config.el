@@ -18,8 +18,11 @@
 ; coding
 (my/load-file "./config-c.el")
 (my/load-file "./config-javascript.el")
+(my/load-file "./config-jinja2.el")
 (my/load-file "./config-perl-mode.el")
 (my/load-file "./config-python.el")
+(my/load-file "./config-ruby.el")
+(my/load-file "./config-rust.el")
 
 (WhenPersonal
   (my/load-file "./config-personal.el")
