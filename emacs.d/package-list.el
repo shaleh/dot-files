@@ -1,7 +1,8 @@
 (require 'my-functions)
 
 ; Get list from package-activated-list.
-(let ((my-package-list '(browse-kill-ring
+(let ((my-package-list '(adoc-mode
+                         browse-kill-ring
                          color-theme
                          color-theme-approximate
                          color-theme-buffer-local
@@ -11,6 +12,7 @@
                          fic-mode
                          find-file-in-project
                          flycheck
+                         flycheck-rust
                          git-timemachine
                          google-this
                          graphviz-dot-mode
@@ -19,6 +21,7 @@
                          indent-guide
                          jinja2-mode
                          js2-mode
+                         json-mode
                          ;;kill-ring-ido
                          lorem-ipsum
                          markdown-mode
@@ -26,7 +29,11 @@
                          python-mode
                          pyvenv
                          rebox2
+                         rust-mode
+                         toml-mode
                          whole-line-or-region
+                         xcscope
+                         yaml-mode
                          yasnippet)))
   (mapc #'my/require-package my-package-list)
  )
