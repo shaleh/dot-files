@@ -1,6 +1,7 @@
 (add-hook 'c-mode-common-hook
   (lambda()
     (local-set-key (kbd "C-x C-o") 'ff-find-other-file)
+    (cscope-minor-mode)
    )
  )
 
