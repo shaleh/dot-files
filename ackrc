@@ -1,7 +1,0 @@
-# make a Django type for .djhtml files
---type-set
-django:ext:djhtml
-
-# also, lump them into html files too
---type-add
-html:ext:djhtml
