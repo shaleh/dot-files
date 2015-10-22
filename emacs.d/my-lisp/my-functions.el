@@ -158,6 +158,8 @@
    )
  )
 
+(defun shell-variable-style (s) (mapconcat 'upcase (split-name s) "_"))
+
 (defun camelcase  (s) (mapconcat 'capitalize (split-name s) ""))
 
 (defun underscore (s) (mapconcat 'downcase   (split-name s) "_"))
@@ -197,6 +199,21 @@
          (widen)
        )
     (my/camelscore-word-at-point-internal)
+   )
+)
+
+(defun my/make-shell-variable-work-at-point-internal ()
+  (let* ((case-fold-search nil)
+         (beg (and (skip-chars-backward "[:alnum:]:-") (point)))
+         (end (and (skip-chars-forward  "[:alnum:]:-") (point)))
+         (txt (buffer-substring beg end))
+         (cml (shell-variable-style txt))
+         )
+    (if cml
+      (progn (delete-region beg end)
+             (insert cml)
+       )
+     )
    )
 )
 
