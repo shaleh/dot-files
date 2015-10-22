@@ -1,3 +1,5 @@
+(setq x-alt-keysym 'meta)
+
 (when (fboundp 'tool-bar-mode)
    (tool-bar-mode -1)
  )
@@ -19,20 +21,14 @@
    (my/resize-frame-wide)
  )
 
-;; load themes
-(require 'color-theme)
-(when (fboundp 'color-theme-initialize)
-   (color-theme-initialize) ; depends on where color-theme came from
+(when (display-graphic-p)
+  (add-hook 'after-make-frame-functions
+    (lambda (frame)
+      (let ((mode 'dark))
+        (set-frame-parameter frame 'background-mode mode)
+        (enable-theme 'solarized)
  )
-(require 'color-theme-solarized)
-(color-theme-solarized-dark)
-
-(defun my/light-style ()
-  (interactive)
-  (color-theme-solarized-light)
  )
-
-(defun my/dark-style ()
-  (interactive)
-  (color-theme-solarized-dark)
+   )
+  (load-theme 'solarized t)
  )
