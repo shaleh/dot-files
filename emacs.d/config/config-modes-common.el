@@ -3,7 +3,7 @@
 (require 'ffap)
 (require 'fic-mode)
 (require 'ido)
-(require 'kill-ring-ido)
+;;(require 'kill-ring-ido)
 (require 'recentf)
 (require 'uniquify)
 (require 'whole-line-or-region)

@@ -1,7 +1,8 @@
 (require 'my-functions)
 
 ; Get list from package-activated-list.
-(let ((my-package-list '(color-theme
+(let ((my-package-list '(browse-kill-ring
+                         color-theme
                          color-theme-approximate
                          color-theme-buffer-local
                          color-theme-solarized
@@ -18,7 +19,7 @@
                          indent-guide
                          jinja2-mode
                          js2-mode
-                         kill-ring-ido
+                         ;;kill-ring-ido
                          lorem-ipsum
                          markdown-mode
                          noflet
