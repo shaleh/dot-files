@@ -30,17 +30,17 @@
 (defvar my/indented-modes '())
 
 ;; auto-indent pasted code
-(defadvice yank (after indent-region activate)
-  (if (member major-mode my/indented-modes)
-      (indent-region (region-beginning) (region-end) nil)
-    )
-  )
+;; (defadvice yank (after indent-region activate)
+;;   (if (and (member major-mode my/indented-modes) (not (string-prefix-p "python" major-mode))) 
+;;       (indent-region (region-beginning) (region-end) nil)
+;;    )
+;;  )
 
-(defadvice yank-pop (after indent-region activate)
-  (if (member major-mode my/indented-modes)
-      (indent-region (region-beginning) (region-end) nil)
-    )
-  )
+;; (defadvice yank-pop (after indent-region activate)
+;;   (if (member major-mode my/indented-modes)
+;;       (indent-region (region-beginning) (region-end) nil)
+;;     )
+;;   )
 
 (defun my/enable-tab-mode ()
    (interactive)
