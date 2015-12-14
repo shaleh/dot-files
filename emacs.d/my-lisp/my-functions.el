@@ -263,4 +263,23 @@
   (search-forward str nil nil num)
  )
 
+(defun my/dict2args (start end)
+  "Converts python dict to function args"
+  (interactive "r")
+  (save-restriction
+    (narrow-to-region start end)
+    (goto-char 1)
+    (let ((case-fold-search nil))
+      (while (search-forward-regexp "'\\(.+\\)': \\(.+\\)\\([,}]\\)" nil t)
+        (replace-match (concat (match-string 1)
+                               "="
+                               (match-string 2)
+                               (match-string 3))
+                       t nil)
+       )
+     )
+   )
+ )
+
+
 (provide 'my-functions)

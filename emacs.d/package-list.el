@@ -12,7 +12,6 @@
                          fic-mode
                          find-file-in-project
                          flycheck
-                         flycheck-rust
                          git-timemachine
                          google-this
                          graphviz-dot-mode

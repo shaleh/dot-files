@@ -1,23 +1,30 @@
 [user]
+	email = sean.perry@hpe.com
 	name = Sean Perry
-	email = <edit me>
-
-[branch]  
+[push]
+	default = simple
+[gitreview]
+	scheme = https
+	port = 443
+	username = sean_perry
+[branch]
 	autosetuprebase = always
-
 [pull]
-        rebase = true
-
+	rebase = true
 [diff]
-        tool = ediff
-        guitool = ediff
-
+	tool = ediff
+	guitool = ediff
 [difftool "ediff"]
-        cmd = ~/bin/ediff.sh $LOCAL $REMOTE $MERGED
-
+	cmd = ~/bin/ediff.sh $LOCAL $REMOTE $MERGED
 [merge]
-        tool = ediff
+	tool = ediff
 
 [mergetool "ediff"]
-        cmd = ~/bin/ediff.sh $LOCAL $REMOTE $MERGED $BASE
-        trustExitCode = true
+	cmd = ~/bin/ediff.sh $LOCAL $REMOTE $MERGED $BASE
+	trustExitCode = true
+[hub]
+	protocol = https
+[alias]
+  serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
+  hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
+  shallow = !git clone --depth 1

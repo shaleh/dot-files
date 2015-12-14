@@ -1,0 +1,6 @@
+(if (not (nilp (getenv "HTTP_PROXY")))
+   (setq url-proxy-services '(("http" . (getenv "HTTP_PROXY"))
+                              ("https" . (getenv "HTTPS_PROXY"))
+                              )
+    )
+ )

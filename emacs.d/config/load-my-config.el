@@ -1,5 +1,9 @@
 (require 'my-macros)
 
+(if (file-exists-p "./config-proxy.el")
+    (my/load-file "./config-proxy.el")
+ )
+
 (my/load-file "./config-packages.el")
 (my/load-file "./config-look.el")
 (my/load-file "./config-keys.el")
