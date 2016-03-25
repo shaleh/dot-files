@@ -23,13 +23,11 @@
 (my/load-file "./config-python.el")
 (my/load-file "./config-ruby.el")
 (my/load-file "./config-rust.el")
-
-(WhenPersonal
-  (my/load-file "./config-personal.el")
- )
-
-(WhenAtWork
-  (my/load-file "./config-work.el")
- )
-
 (my/load-file "./config-server.el")
+
+(let ((extra-config "./config-extras.el")
+      )
+  (if (file-exists-p extra-config)
+     (my/load-file extra-config)
+   )
+ )

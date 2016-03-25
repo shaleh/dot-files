@@ -11,12 +11,9 @@
 
   (my/load-file (concat user-emacs-directory "package-list.el"))
 
-  (WhenAtWork
-    (my/load-file (concat user-emacs-directory "work-package-list.el"))
+  (let ((extra-package-names (concat user-emacs-directory "extra-package-list.el"))
+        )
+    (if (file-exists-p 'extra-package-names)
+      (my/load-file 'extra-package-names)
+     )
    )
-
-  (WhenPersonal
-    (my/load-file (concat user-emacs-directory "personal-package-list.el"))
-   )
- )
-
