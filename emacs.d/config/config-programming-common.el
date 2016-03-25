@@ -17,7 +17,7 @@
 (require 'indent-guide)
 
 (defun my/common-programming-hook ()
-   (turn-on-fic-mode)
+   (fic-mode)
    (flyspell-prog-mode)
    (linum-mode)
    (my/enable-subword-mode)
