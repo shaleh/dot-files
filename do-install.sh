@@ -14,10 +14,6 @@ cp_or_diff()
     fi
 }
 
-cp_or_diff ackrc ~/.ackrc
-
 rsync -av --exclude '.git' emacs.d/ ~/.emacs.d/
 
-if [ ! -f ~/.gitconfig ]; then
-    cp gitconfig ~/.gitconfig
-fi
+cp_or_diff gitconfig ~/.gitconfig
