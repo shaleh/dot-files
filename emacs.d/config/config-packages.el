@@ -13,8 +13,8 @@
 
   (let ((extra-package-names (concat user-emacs-directory "extra-package-list.el"))
         )
-    (if (file-exists-p 'extra-package-names)
-      (my/load-file 'extra-package-names)
+    (if (file-exists-p extra-package-names)
+      (my/load-file extra-package-names)
      )
    )
  )
