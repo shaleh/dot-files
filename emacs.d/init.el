@@ -2,7 +2,7 @@
 (if (boundp 'user-emacs-directory)
     nil
   (defvar user-emacs-directory "~/.emacs.d/")
-  )
+ )
 
 ;; N.B. use convert-standard-filename to help transition between Unix and Win
 
@@ -41,8 +41,42 @@
    )
  )
 
+(require 'package)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
+                         )
+ )
+(package-initialize)
+
+(unless package-archive-contents
+  (package-refresh-contents)
+ )
+
+(add-to-list 'load-path (concat user-emacs-directory (convert-standard-filename "el-get/el-get")))
+
+(unless (require 'el-get nil 'noerror)
+  (package-install 'el-get)
+  (require 'el-get)
+ )
+
+(add-to-list 'el-get-recipe-path (concat user-emacs-directory (convert-standard-filename "el-get-recipes")))
+
+(el-get 'sync)
+(el-get-bundle shaleh)
+
+(require 'shaleh)
+
+(shaleh-load-file (concat user-emacs-directory "package-list.el"))
+
+(let ((extra-package-names (concat user-emacs-directory "extra-package-list.el"))
+      )
+  (if (file-exists-p extra-package-names)
+    (shaleh-load-file extra-package-names)
+   )
+ )
+
 (setq custom-file (concat user-emacs-directory "my-custom.el"))
-(my/load-file custom-file)
+(shaleh-load-file custom-file)
 
 (add-hook 'after-init-hook
   (lambda ()
@@ -50,7 +84,7 @@
     (let ((default-directory (concat user-emacs-directory
                                    (convert-standard-filename "config/")))
           )
-      (my/load-file "load-my-config.el")
+      (shaleh-load-file "load-my-config.el")
      )
    )
  )
