@@ -4,6 +4,7 @@
 (define-key input-decode-map "\e\e[1~" [(meta home)])
 (define-key input-decode-map "\e\e[4~" [(meta end)])
 
+(global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line)
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "<home>") 'beginning-of-line)

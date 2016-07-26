@@ -25,6 +25,7 @@
                          ;;kill-ring-ido
                          lorem-ipsum
                          markdown-mode
+                         mwim
                          noflet
                          python-mode
                          pyvenv
