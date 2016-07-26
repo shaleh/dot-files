@@ -1,9 +1,11 @@
 [user]
-	name = Sean Perry
-	email = <edit me>
+        name = Sean Perry
 
-[branch]  
-	autosetuprebase = always
+[core]
+	editor = emacsclient
+
+[branch]
+        autosetuprebase = always
 
 [pull]
         rebase = true
@@ -23,4 +25,12 @@
         trustExitCode = true
 
 [push]
-	default = simple
+        default = simple
+
+[hub]
+	protocol = https
+
+[alias]
+  serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
+  hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
+  shallow = !git clone --depth 1
