@@ -8,3 +8,4 @@
 (setq org-agenda-files (list org-directory))
 (setq org-default-notes-file (concat org-directory "/captured-notes.org"))
 (setq org-startup-indented t)
+(setq org-todo-keywords '((type "TODO" "MAYBE" "FUTURE" "|" "DONE")))
