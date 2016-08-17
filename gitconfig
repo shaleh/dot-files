@@ -1,6 +1,3 @@
-[user]
-        name = Sean Perry
-
 [core]
 	editor = emacsclient
 
@@ -34,3 +31,6 @@
   serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
   hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
   shallow = !git clone --depth 1
+
+[init]
+	templatedir = ~/.git-templates
