@@ -17,3 +17,7 @@ cp_or_diff()
 rsync -av --exclude '.git' emacs.d/ ~/.emacs.d/
 
 cp_or_diff gitconfig ~/.gitconfig
+
+[ -d ~/.config/git ] || mkdir -p ~/.config/git
+
+cp_or_diff config/git/personal-settings ~/.config/git/personal-settings
