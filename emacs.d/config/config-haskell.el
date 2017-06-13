@@ -28,9 +28,15 @@
    )
  )
 
+<<<<<<< HEAD
 (add-hook 'haskell-mode-hook 'shaleh-haskell-hook)
 
 (defun shaleh-haskell-hook ()
+=======
+(add-hook 'haskell-mode-hook 'my/haskell-hook)
+
+(defun my/haskell-hook ()
+>>>>>>> c1e4490597cd141772f2d057f01042f98a52e6b3
     (turn-on-haskell-indentation)
 
     ;; Indent the below lines on columns after the current column.
