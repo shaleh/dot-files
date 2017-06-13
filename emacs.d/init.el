@@ -30,6 +30,10 @@
    )
  )
 
+(let ((default-directory  "/usr/local/share/emacs/site-lisp/"))
+  (normal-top-level-add-subdirs-to-load-path)
+ )
+
 (defvar my-site-lisp (concat user-emacs-directory (convert-standard-filename "site-lisp/")))
 
 (setq package-user-dir (concat my-site-lisp "packaged"))
