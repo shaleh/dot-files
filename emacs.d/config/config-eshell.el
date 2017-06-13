@@ -30,7 +30,6 @@
       eshell-smart-space-goes-to-end t
  )
 
-<<<<<<< HEAD
 (setq eshell-prompt-function
   (lambda ()
     (concat (if (> (length (eshell/pwd)) 50)
