@@ -12,10 +12,12 @@
                          fic-mode
                          find-file-in-project
                          flycheck
+                         flycheck-haskell
                          flycheck-rust
                          git-timemachine
                          google-this
                          graphviz-dot-mode
+                         haskell-mode
                          hide-lines
                          highlight-indentation
                          indent-guide
@@ -31,6 +33,7 @@
                          pyvenv
                          rebox2
                          rust-mode
+                         thrift
                          toml-mode
                          whole-line-or-region
                          xcscope
