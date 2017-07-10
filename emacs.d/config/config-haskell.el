@@ -3,6 +3,8 @@
              (concat my-site-lisp (convert-standard-filename "haskell-mode/"))
  )
 
+(define-key haskell-mode-map "\C-ch" 'haskell-hoogle)
+
 (add-hook 'align-load-hook
   (lambda ()
     (add-to-list 'align-rules-list
