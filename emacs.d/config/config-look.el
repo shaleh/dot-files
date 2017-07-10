@@ -21,14 +21,4 @@
    (my/resize-frame-wide)
  )
 
-(when (display-graphic-p)
-  (add-hook 'after-make-frame-functions
-    (lambda (frame)
-      (let ((mode 'dark))
-        (set-frame-parameter frame 'background-mode mode)
-        (enable-theme 'solarized)
- )
- )
-   )
-  (load-theme 'solarized t)
- )
+(load-theme 'solarized-dark t)
