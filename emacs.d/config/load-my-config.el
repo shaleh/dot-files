@@ -18,6 +18,7 @@
 ; coding
 (shaleh-load-file "./config-c.el")
 (shaleh-load-file "./config-elisp.el")
+(shaleh-load-file "./config-go.el")
 (shaleh-load-file "./config-haskell.el")
 (shaleh-load-file "./config-java.el")
 (shaleh-load-file "./config-javascript.el")
