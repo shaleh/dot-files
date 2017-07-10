@@ -1,6 +1,16 @@
 (require 'package)
 (require 'thingatpt)
 
+(defun my/kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (dolist (buffer (buffer-list))
+    (unless (or (eql buffer (current-buffer)) (not (buffer-file-name buffer)))
+      (kill-buffer buffer)
+     )
+   )
+ )
+
 (defun my/hide-trailing-whitespace ()
   "Do not highlight trailing whitespace in this buffer."
   (interactive)
