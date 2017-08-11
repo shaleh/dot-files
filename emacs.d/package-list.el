@@ -11,8 +11,11 @@
                         fic-mode
                         find-file-in-project
                         flycheck
+                        flycheck-bashate
                         flycheck-haskell
+                        flycheck-pyflakes
                         flycheck-rust
+                        flycheck-yamllint
                         git
                         git-timemachine
                         go-mode
@@ -22,6 +25,8 @@
                         hide-lines
                         highlight-indentation
                         indent-guide
+                        intero
+                        jedi-core
                         jinja2-mode
                         js2-mode
                         json-mode
@@ -32,12 +37,16 @@
                         markdown-mode
                         mwim
                         noflet
+                        org
+                        org-plus-contrib
+                        org-pomodoro
                         pass
                         password-store
                         python-mode
                         pyvenv
                         rebox2
                         rust-mode
+                        scala-mode
                         thrift
                         toml-mode
                         whole-line-or-region
@@ -46,6 +55,11 @@
                         yasnippet))
 
 (mapc #'my/require-package my-package-list)
+
+;; This is the list of installed packages
+;; TODO: improve the functions below
+;; (mapcar (lambda (p) (unless (package-built-in-p p) (package-desc-name p)))
+;;                  (apply #'append (mapcar #'cdr package-alist)))
 
 (defun my/package-inconsistency()
   (-difference my-package-list (sort (delq nil (delete-dups package-activated-list)) #'string<))
