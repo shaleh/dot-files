@@ -1,3 +1,4 @@
+emacs.d/config/config-extras.el
 *.elc
 *~
 *.o

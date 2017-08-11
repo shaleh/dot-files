@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: env
+# key: env
+# binding: direct-keybinding
+# --
+#!/usr/bin/env python

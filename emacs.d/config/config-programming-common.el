@@ -19,6 +19,7 @@
 (defun my/common-programming-hook ()
    (fic-mode)
    (flyspell-prog-mode)
+   (flycheck-mode)
    (linum-mode)
    (my/enable-subword-mode)
    (hl-line-mode)

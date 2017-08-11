@@ -3,6 +3,7 @@
 
 (shaleh-load-file "./config-look.el")
 (shaleh-load-file "./config-keys.el")
+(shaleh-load-file "./config-kbd-macros.el")
 
 (shaleh-load-file "./config-modes-common.el")
 (shaleh-load-file "./config-programming-common.el")
@@ -18,6 +19,7 @@
 ; coding
 (shaleh-load-file "./config-c.el")
 (shaleh-load-file "./config-elisp.el")
+(shaleh-load-file "./config-go.el")
 (shaleh-load-file "./config-haskell.el")
 (shaleh-load-file "./config-java.el")
 (shaleh-load-file "./config-javascript.el")

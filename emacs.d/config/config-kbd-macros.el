@@ -1,0 +1,2 @@
+(fset 'my-prepare-for-online
+   [?\M-< ?\C-  ?\M-> ?\C-x ?r ?t ?  ?  ?  ?  return])
