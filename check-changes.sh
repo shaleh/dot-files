@@ -2,4 +2,8 @@
 
 diff -prub --exclude '*~' --exclude '.git' --exclude '*.elc' --exclude 'state' emacs.d ~/.emacs.d
 diff -u ~/.gitconfig gitconfig
-diff -prub config ~/.config
+
+for d in config/*
+do
+    diff -prub $d ~/.$d
+done
