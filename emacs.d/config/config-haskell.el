@@ -30,9 +30,12 @@
    )
  )
 
+(add-hook 'haskell-mode-hook 'intero-mode)
 (add-hook 'haskell-mode-hook 'shaleh-haskell-hook)
 
 (defun shaleh-haskell-hook ()
+    (my/common-programming-hook)
+
     (turn-on-haskell-indentation)
 
     ;; Indent the below lines on columns after the current column.
@@ -50,6 +53,4 @@
          (haskell-move-nested -1)
         )
      )
-
-    (my/common-programming-hook)
  )
