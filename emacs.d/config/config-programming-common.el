@@ -1,8 +1,3 @@
-(custom-set-variables
-  '(help-at-pt-timer-delay 0.9)
-  '(help-at-pt-display-when-idle '(flymake-overlay))
- )
-
 (defun my/enable-subword-mode ()
   "Enable with subword or c-subword-mode"
   (interactive)
@@ -20,7 +15,10 @@
    (fic-mode)
    (flyspell-prog-mode)
    (flycheck-mode)
-   (linum-mode)
+   (if (boundp display-line-numbers)
+       (setq display-line-numbers t)
+     (linum-mode)
+    )
    (my/enable-subword-mode)
    (hl-line-mode)
    (indent-guide-mode)
