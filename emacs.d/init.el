@@ -12,6 +12,8 @@
    (normal-top-level-add-subdirs-to-load-path)
  )
 
+;;(when window-system (my/set-exec-path-from-shell-PATH))
+
 (require 'my-macros)
 (require 'my-functions)
 
@@ -21,13 +23,6 @@
 (WhenUnix
   (defvar my/home-dir (concat (expand-file-name "~") "/"))
   (defvar my/bin-dir (concat my/home-dir "bin/"))
- )
-
-(WhenOSX
-  (setenv "PATH" (concat my/bin-dir path-separator
-                         "/usr/local/bin" path-separator
-                         (getenv "PATH"))
-   )
  )
 
 (let ((default-directory  "/usr/local/share/emacs/site-lisp/"))
@@ -57,28 +52,7 @@
   (package-refresh-contents)
  )
 
-(add-to-list 'load-path (concat user-emacs-directory (convert-standard-filename "el-get/el-get")))
-
-(unless (require 'el-get nil 'noerror)
-  (package-install 'el-get)
-  (require 'el-get)
- )
-
-(add-to-list 'el-get-recipe-path (concat user-emacs-directory (convert-standard-filename "el-get-recipes")))
-
-(el-get 'sync)
-(el-get-bundle shaleh)
-
 (require 'shaleh)
-
-(shaleh-load-file (concat user-emacs-directory "package-list.el"))
-
-(let ((extra-package-names (concat user-emacs-directory "extra-package-list.el"))
-      )
-  (if (file-exists-p extra-package-names)
-    (shaleh-load-file extra-package-names)
-   )
- )
 
 (setq custom-file (concat user-emacs-directory "my-custom.el"))
 (shaleh-load-file custom-file)
