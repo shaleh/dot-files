@@ -1,36 +1,38 @@
 (require 'my-macros)
 (require 'shaleh)
 
-(shaleh-load-file "./config-look.el")
-(shaleh-load-file "./config-keys.el")
-(shaleh-load-file "./config-kbd-macros.el")
-
-(shaleh-load-file "./config-modes-common.el")
-(shaleh-load-file "./config-programming-common.el")
-
-; misc
-(shaleh-load-file "./config-ediff.el")
-(shaleh-load-file "./config-eshell.el")
-(shaleh-load-file "./config-graphviz.el")
-(shaleh-load-file "./config-markdown.el")
-(shaleh-load-file "./config-org.el")
-(shaleh-load-file "./config-yasnippet.el")
-
-; coding
-(shaleh-load-file "./config-c.el")
-(shaleh-load-file "./config-elisp.el")
-(shaleh-load-file "./config-go.el")
-(shaleh-load-file "./config-haskell.el")
-(shaleh-load-file "./config-java.el")
-(shaleh-load-file "./config-javascript.el")
-(shaleh-load-file "./config-jinja2.el")
-(shaleh-load-file "./config-perl-mode.el")
-(shaleh-load-file "./config-python.el")
-(shaleh-load-file "./config-ruby.el")
-(shaleh-load-file "./config-rust.el")
-(shaleh-load-file "./config-server.el")
-(shaleh-load-file "./config-shell-mode.el")
-(shaleh-load-file "./config-thrift.el")
+(dolist (cfg '("./config-look.el"
+               "./config-keys.el"
+               "./config-kbd-macros.el"
+               "./config-aliases.el"
+               "./config-modes-common.el"
+               "./config-eshell.el"
+               ;; Programming helpers
+               "./config-programming-common.el"
+               "./config-ediff.el"
+               "./config-graphviz.el"
+               "./config-markdown.el"
+               "./config-org.el"
+               "./config-thrift.el"
+               "./config-yaml.el"
+               "./config-yasnippet.el"
+               ;; Programming modes
+               "./config-c.el"
+               "./config-elisp.el"
+               "./config-go.el"
+               "./config-haskell.el"
+               "./config-java.el"
+               "./config-javascript.el"
+               "./config-jinja2.el"
+               "./config-perl-mode.el"
+               "./config-python.el"
+               "./config-ruby.el"
+               "./config-rust.el"
+               "./config-server.el"
+               "./config-shell-mode.el"
+               "./config-web.el"))
+  (shaleh-load-file cfg)
+ )
 
 (let ((extra-config "./config-extras.el")
       )
