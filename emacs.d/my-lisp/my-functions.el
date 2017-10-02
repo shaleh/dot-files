@@ -97,4 +97,10 @@
   (search-forward str nil nil num)
  )
 
+(defun my/byte-offset-at-point ()
+  "Report the byte offset (0-indexed) of point."
+  (interactive)
+  (message "byte offset: %d" (1- (position-bytes (point))))
+ )
+
 (provide 'my-functions)
