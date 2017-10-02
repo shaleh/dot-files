@@ -1,5 +1,0 @@
-(:name shaleh
- :type github
- :pkgname "shaleh/shaleh-elisp"
- :description "Shaleh's elisp"
- )
