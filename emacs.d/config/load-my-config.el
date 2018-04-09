@@ -7,8 +7,10 @@
                "./config-aliases.el"
                "./config-modes-common.el"
                "./config-eshell.el"
+               "./config-dockerfile.el"
                ;; Programming helpers
                "./config-programming-common.el"
+               "./config-css.el"
                "./config-ediff.el"
                "./config-graphviz.el"
                "./config-markdown.el"

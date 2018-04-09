@@ -14,3 +14,6 @@
 (flycheck-add-mode 'javascript-eslint 'javascript-mode)
 
 (add-hook 'web-mode-hook 'my/common-programming-hook)
+
+(add-to-list 'safe-local-variable-values
+             '(flycheck-javascript-eslint-executable . stringp))
