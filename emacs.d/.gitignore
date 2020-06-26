@@ -1,0 +1,9 @@
+auto-save-alist
+elpa/
+eshell/history
+eshell/lastdir
+settings.el
+site-lisp/packaged/
+site-lisp/unpackaged/shaleh
+state/
+transient/

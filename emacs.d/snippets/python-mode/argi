@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: argi
-# key: argi
-# binding: direct-keybinding
-# --
-parser.add_argument("--$1", type=int, help="$2")

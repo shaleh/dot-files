@@ -1,7 +1,0 @@
-# -*- mode: snippet; require-final-newline: nil -*-
-# name: lock
-# key: lock
-# binding: direct-keybinding
-# --
-$1.Lock()
-defer $1.Unlock()

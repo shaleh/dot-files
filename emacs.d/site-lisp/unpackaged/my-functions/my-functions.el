@@ -103,4 +103,67 @@
   (message "byte offset: %d" (1- (position-bytes (point))))
  )
 
+(defun my/url-decode-region (start end)
+  "Replace a region with the same contents, only URL decoded."
+  (interactive "r")
+  (let ((text (url-unhex-string (buffer-substring start end))))
+    (delete-region start end)
+    (insert text)
+   )
+ )
+
+(defun my/url-encode-region (start end)
+  "Replace a region with the same contents, only URL decoded."
+  (interactive "r")
+  (let ((text (url-hexify-string (buffer-substring start end))))
+    (delete-region start end)
+    (insert text)
+   )
+ )
+
+(defun my/find-related-file (buf)
+  "Visit related file currently in BUF.
+For Python, this means either open foo_tests.py for foo.py or vice versa."
+  (interactive "b")
+  (let* ((current-file (buffer-file-name (get-buffer buf)))
+         (base-name (file-name-sans-extension current-file))
+         (ext (file-name-extension current-file)))
+    (find-file-other-window
+     (cond ((equal "py" ext) (if (string-suffix-p "_tests" base-name)
+                                 (concat (string-remove-suffix "_tests" base-name) ".py")
+                               (concat base-name "_tests.py")))
+     ))
+    )
+  )
+
+(defun my/reverse-region (beg end)
+  "Reverse characters between BEG and END."
+  (interactive "r")
+  (let ((region (buffer-substring beg end)))
+    (delete-region beg end)
+    (insert (nreverse region))
+   )
+ )
+
+(defun my/enable-subword-mode ()
+  "Enable with subword or c-subword-mode"
+  (interactive)
+  (if (fboundp 'subword-mode)
+      (subword-mode)
+    (if (fboundp 'c-subword-mode)
+        (c-subword-mode)
+     )
+   )
+  )
+
+(defun my/enable-tab-mode ()
+   (interactive)
+   (setq indent-tabs-mode t)
+   )
+
+(defun my/mk-tab-width-4 ()
+   (interactive)
+   (setq-default tab-width 4)
+   )
+
 (provide 'my-functions)
