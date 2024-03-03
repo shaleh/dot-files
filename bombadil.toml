@@ -3,9 +3,11 @@ dotfiles_dir = "repos/personal/dot-files"
 [settings]
 # vars = [ "vars.toml" ]
 
-# posthooks = [ "sway reload" ]
-
 [settings.dots]
 fish = { source = "fish", target = ".config/fish" }
+
+[profiles.linux_laptop.dots]
 hypr = { source = "hypr", target = ".config/hypr" }
 kanata = { source = "kanata", target = ".config/kanata" }
+kanata_service = { source = "kanata.service", target = ".config/systemd/user/kanata.service" }
+waybar = { source = "waybar", target = ".config/waybar" }
