@@ -7,9 +7,5 @@ dotfiles_dir = "repos/personal/dot-files"
 
 [settings.dots]
 fish = { source = "fish", target = ".config/fish" }
-# # A dot entry representing a symlink, `source` is relative to `dotfiles_dir`
-# # and `target` shall be relative to $HOME directory or absolute.
-# sway = { source = "sway", target = ".config/sway" }
-
-# # You can have as many dot entry as you want, linking files or directories
-# alacritty = { source = "alacritty.yml", target = ".config/alacritty/alacritty.yml" }
+hypr = { source = "hypr", target = ".config/hypr" }
+kanata = { source = "kanata", target = ".config/kanata" }
