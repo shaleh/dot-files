@@ -1,10 +1,11 @@
 dotfiles_dir = "repos/personal/dot-files"
 
 [settings]
-# vars = [ "vars.toml" ]
+vars = [ "vars.toml" ]
 
 [settings.dots]
 fish = { source = "fish", target = ".config/fish" }
+git = { source = "git/gitconfig", target = ".gitconfig", vars = "git/vars.toml" }
 
 [profiles.linux_laptop.dots]
 hypr = { source = "hypr", target = ".config/hypr" }

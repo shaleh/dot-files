@@ -4,3 +4,4 @@
 *.pyo
 *.pyc
 .dots
+git/vars.toml
