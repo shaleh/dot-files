@@ -1,7 +1,6 @@
-emacs.d/config/config-extras.el
-config/hexchat/scrollback
 *.elc
 *~
 *.o
 *.pyo
 *.pyc
+.dots

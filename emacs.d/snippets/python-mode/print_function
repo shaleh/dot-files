@@ -1,6 +1,0 @@
-# -*- mode: snippet; -*-
-# name: print_function
-# key: print_function
-# binding: direct-keybinding
-# --
-from __future__ import print_function

@@ -1,3 +1,0 @@
-#!/bin/sh
-
-git validate-my-config || setup-git
