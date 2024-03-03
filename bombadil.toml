@@ -4,6 +4,7 @@ dotfiles_dir = "repos/personal/dot-files"
 vars = [ "vars.toml" ]
 
 [settings.dots]
+emacs = { source = "emacs.d", target = ".emacs.d" }
 fish = { source = "fish", target = ".config/fish" }
 git = { source = "git/gitconfig", target = ".gitconfig", vars = "git/vars.toml" }
 
