@@ -1,4 +1,5 @@
 dotfiles_dir = "repos/personal/dot-files"
+verbosity = true
 
 [settings]
 vars = [ "vars.toml" ]
