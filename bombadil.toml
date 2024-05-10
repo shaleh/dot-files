@@ -6,8 +6,13 @@ vars = [ "vars.toml" ]
 [settings.dots]
 fish = { source = "fish", target = ".config/fish" }
 git = { source = "git/gitconfig", target = ".gitconfig", vars = "git/vars.toml" }
+gitui = { source = "gitui", target = ".config/gitui" }
+git-delta = { source = "git-delta", target = ".config/git-delta" }
 helix = { source = "helix", target = ".config/helix" }
 kitty = { source = "kitty", target = ".config/kitty" }
+
+[profiles.macos.dots]
+kmonad = { source = "macos/kmonad", target = ".config/kmonad" }
 
 [profiles.linux_laptop.dots]
 kanata = { source = "linux/kanata", target = ".config/kanata" }
