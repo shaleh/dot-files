@@ -1,32 +1,29 @@
+[include]
+	path = ~/.config/git-delta/themes.gitconfig
+
 [user]
-	email = {{email}}
-	name = {{full_name}}
-
-[core]
-	editor = emacsclient
-
-[branch]
-        autosetuprebase = always
+	name = {{name}}
 
 [pull]
-        rebase = true
+	rebase = true
 
-[diff]
-        tool = ediff
-        guitool = ediff
+[core]
+    pager = delta
 
-[difftool "ediff"]
-        cmd = ~/bin/ediff.sh $LOCAL $REMOTE $MERGED
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+	line-numbers = true
+	features = arctic-fox
+	#side-by-side = true
 
 [merge]
-        tool = ediff
+    conflictstyle = zdiff3
 
-[mergetool "ediff"]
-        cmd = ~/bin/ediff.sh $LOCAL $REMOTE $MERGED $BASE
-        trustExitCode = true
-
-[push]
-        default = simple
+[diff]
+    colorMoved = default
 
 [hub]
 	protocol = https
