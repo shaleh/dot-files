@@ -1,0 +1,30 @@
+[language-server]
+ltex = { command='/opt/ltex-latest/bin/ltex-ls', config={ ltex.enabled=['markdown', 'rust', 'python', 'restructuredtext'] } }
+
+[[language]]
+name = "rust"
+auto-format = true
+language-servers = [ "rust-analyzer", "ltex" ]
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[[language]]
+name = "python"
+auto-format = true
+rulers = [88]
+language-servers = [ "pylsp", "ltex" ]
+
+[language-server.pylsp]
+config = { pylsp={ configurationSources=['flake8'], plugins={ pycodestyle={ enabled = false }, pyflakes={ enabled = false }, mccabe={ enabled = false }, flake8={ enabled = true }, isort={ enabled = true }, rope={ enabled = true } } } }
+
+[[language]]
+name = "swift"
+roots = ['.git']
+
+[[language]]
+name = "c"
+auto-format = false
+
+[language-server.clangd]
+command = "/opt/homebrew//Cellar/llvm/17.0.6_1/bin/clangd"

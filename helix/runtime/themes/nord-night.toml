@@ -1,0 +1,9 @@
+# Nord Night Shaleh
+
+# This is the nord-night background with the standard nord colors otherwise.
+#
+inherits = 'nord'
+
+[palette]
+nord0 = '#202428'
+nord4 = '#C0C5CF'
