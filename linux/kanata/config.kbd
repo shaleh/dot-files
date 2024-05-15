@@ -9,8 +9,6 @@
 ;; The first layer defined is the layer that will be active by default when
 ;; kanata starts up. This layer is the standard QWERTY layout except for the
 ;; backtick/grave key (@grl) which is an alias for a tap-hold key.
-;;
-;; There are currently a maximum of 25 layers allowed.
 (deflayer qwerty
   @grl  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab   q    w    e    r    t    y    u    i    o    p    [    ]    \
@@ -20,7 +18,7 @@
 )
 
 (deflayer colemak
- @grl  _    _    _    _    _    _    _    _    _    _    _    _    _
+ _     _    _    _    _    _    _    _    _    _    _    _    _    _
  _     q    w    f    p    b    j    l    u    y    ;    _    _    _
  _     a    r    s    t    g    m    n    e    i    o    _    _
  _     z    x    c    d    v    k    h    _    _    _    _
@@ -41,12 +39,8 @@
 
 
   ;; tap for capslk, hold for lctl
-  cwc (caps-word-custom
-    2000
-    (a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9)
-    (kp0 kp1 kp2 kp3 kp4 kp5 kp6 kp7 kp8 kp9 bspc del up down left rght)
-  )
-  cap (tap-hold 200 200 @cwc lctl)
+  cw  (caps-word 2000)
+  cap (tap-hold 200 200 @cw lctl)
 )
 
 ;; The `lrld` action stands for "live reload". This will re-parse everything
@@ -58,10 +52,8 @@
 ;; Apart from the layer switching and live reload, all other keys are the
 ;; underscore _ which means "transparent". Transparent means the base layer
 ;; behaviour is used when pressing that key.
-(deflayer layers
-  _    @qwr @cmk lrld _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _
+(deflayermap (base-layer)
+  1 @qwr
+  2 @cmk
+  3 lrld
 )
