@@ -27,4 +27,12 @@ name = "c"
 auto-format = false
 
 [language-server.clangd]
-command = "/opt/homebrew//Cellar/llvm/17.0.6_1/bin/clangd"
+command = "/opt/homebrew/Cellar/llvm/18.1.4/bin/clangd"
+
+[[language]]
+name = "fish"
+language-servers = [ "fish-lsp" ]
+
+[language-server.fish-lsp]
+command = "fish-lsp"
+args= ["start"]

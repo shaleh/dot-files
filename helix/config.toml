@@ -17,19 +17,25 @@ left = ["mode", "version-control", "spinner"]
 center = ["file-name", "file-modification-indicator"]
 right = ["register", "diagnostics", "selections", "position-percentage", "total-line-numbers"]
 
-[editor.whitespace]
-render = "all"
+# [editor.whitespace.render]
+# space = "all"
+# nbsp = "all"
+# nnbsp = "all"
+# tab = "all"
+# newline = "none"
 
-[editor.whitespace.characters]
-space = "·"
-nbsp = "⍽"
-nnbsp = "␣"
-tab = "→"
-#newline = "⏎"
-tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+# :set whitespace.render all defaults to the items below.
+# [editor.whitespace.characters]
+# nbsp = "⍽"
+# nnbsp = "␣"
+# space = "·"
+# tab = "→"
+# tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+# newline = "⏎"
 
 [keys.normal]
 '#' = 'toggle_comments'
+a = ['append_mode', 'collapse_selection']
 W = 'move_next_sub_word_start'
 B = 'move_prev_sub_word_start'
 E = 'move_next_sub_word_end'
