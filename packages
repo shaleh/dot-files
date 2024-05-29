@@ -1,0 +1,21 @@
+asdf: https://asdf-vm.com/
+clangd
+cvstool: https://github.com/maroofi/csvtool/
+direnv: https://direnv.net/
+eza: https://github.com/eza-community/eza
+fish: https://fishshell.com/
+fish-lsp: https://github.com/ndonfris/fish-lsp/
+fzf: https://github.com/junegunn/fzf/
+helix: https://github.com/helix-editor/helix/
+httpie: https://github.com/httpie/cli/
+jq: https://github.com/jqlang/jq/
+kanata / kmonad: https://github.com/jtroo/kanata/ or https://github.com/kmonad/kmonad/
+kitty: https://github.com/kovidgoyal/kitty/
+ltex-ls: https://github.com/valentjn/ltex-ls/
+ripgrep: https://github.com/BurntSushi/ripgrep/
+rustup: https://rustup.rs/
+toml-bombadil: https://github.com/oznozor/toml-bombadil/
+VictorMono Nerd Font: https://nerdfonts.com/
+yaml-language-server: https://github.com/redhat-developer/yaml-language-server/
+yazi: https://github.com/sxyyazi/yazi/
+zellij: https://github.com/zellij-org/zellij/
