@@ -4,6 +4,9 @@
 #
 inherits = 'nord'
 
+# This fixes bracket match highlighting.
+"ui.cursor.match" = { fg = "nord8", bg = "nord3" }
+
 [palette]
 nord0 = '#202428'
 nord4 = '#C0C5CF'
