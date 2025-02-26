@@ -1,0 +1,56 @@
+theme = "nord-night"
+
+[editor]
+auto-pairs = false
+line-number = "relative"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+[editor.statusline]
+left = ["mode", "version-control", "spinner"]
+center = ["file-name", "file-modification-indicator"]
+right = ["register", "diagnostics", "selections", "position-percentage", "total-line-numbers"]
+
+# [editor.whitespace.render]
+# space = "all"
+# nbsp = "all"
+# nnbsp = "all"
+# tab = "all"
+# newline = "none"
+
+# :set whitespace.render all defaults to the items below.
+# [editor.whitespace.characters]
+# nbsp = "⍽"
+# nnbsp = "␣"
+# space = "·"
+# tab = "→"
+# tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+# newline = "⏎"
+ 
+[keys.normal]
+'#' = 'toggle_comments'
+a = ['append_mode', 'collapse_selection']
+#W = 'move_next_sub_word_start'
+#B = 'move_prev_sub_word_start'
+#E = 'move_next_sub_word_end'
+X = 'select_line_above'
+# d and c yank by default. Ick.
+d = "delete_selection_noyank"
+c = "change_selection_noyank"
+A-d = "delete_selection"
+A-c = "change_selection"
+# Both of these could pop the paste once paste stack is working.
+#C-j = ["extend_to_line_bounds", ":set-next-register a", "delete_selection", ":set-next-register a", "paste_after"]
+#C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+#p = 'paste_after'
+#P = 'paste_before'
+#A-p = 'paste_picker_after'
+
+# [keys.select]
+# W = 'extend_next_sub_word_start'
+# B = 'extend_prev_sub_word_start'
+# E = 'extend_next_sub_word_end'

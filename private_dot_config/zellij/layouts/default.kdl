@@ -1,0 +1,26 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="file:~/.config/zellij/plugins/zj-status-bar.wasm"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="status-bar"
+        }
+    }
+    pane_template name="pane-by-3" {
+        pane split_direction="vertical" {
+            pane size=120
+            pane split_direction="horizontal" {
+                pane
+                pane
+            }
+        }
+    }
+    tab name="First" focus=true cwd="~/repos/" {
+        pane-by-3
+    }
+    tab name="other" cwd="~/repos" {
+        pane-by-3
+    }
+}

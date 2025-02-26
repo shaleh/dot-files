@@ -3,4 +3,4 @@ dot-files
 
 My dot files.
 
-These are managed using the excellent toml-bombadil package.
+These are managed using the (chezmoi)[https://chezmoi.io] package.

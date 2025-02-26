@@ -1,0 +1,55 @@
+[include]
+	path = ~/.config/git-delta/themes.gitconfig
+
+[user]
+	name = Sean Perry
+[pull]
+	rebase = true
+[core]
+    pager = delta
+[alias]
+	local-branches = "!git branch --format '%(refname:short) %(upstream:short)' | awk '{if (!$2) print $1;}'"
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+	line-numbers = true
+	features = arctic-fox
+	#side-by-side = true
+
+[diff]
+        tool = kdiff3
+
+[difftool "kdiff3"]
+        path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+
+[difftool]
+        prompt = false
+        keepBackup = false
+        trustExitCode = false
+
+[merge]
+        tool = kdiff3
+
+[mergetool]
+        prompt = false
+        keepBackup = false
+        keepTemporaries = false
+
+[mergetool "kdiff3"]
+        path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+
+# [merge]
+#     conflictstyle = zdiff3
+
+# [diff]
+#     colorMoved = default
+# 	tool = meld
+
+# [difftool]
+# 	prompt = false
+
+# [difftool "meld"]
+# 	cmd = /Applications/Meld.app/Contents/MacOS/Meld $LOCAL $REMOTE
