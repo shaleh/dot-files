@@ -15,4 +15,4 @@ LICENSE
 # Linux only files
 {{ if .ne .chezmoi.os "Linux" }}
 
-{ end }}
+{{ end }}
