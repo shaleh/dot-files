@@ -113,5 +113,5 @@ packages:
     - 'font-victor-mono-nerd-font'
     - 'font-zed-mono-nerd-font'
     - 'kitty'
-  casks:
+    casks:
     - 'dehesselle-meld'
