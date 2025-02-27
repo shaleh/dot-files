@@ -1,0 +1,5 @@
+[settings.status]
+show_env = true
+
+[tools]
+python = "system"
