@@ -1,3 +1,18 @@
 README.md
 LICENSE
 .config/fish/fish_variables
+
+### This section is for OS specific files.
+### The logic is reversed here than one might expect.
+### For example, place the OSX files in the darwin block and they
+### will be ignored everywhere but on OSX.
+
+# OSX only files
+{{ if ne .chezmoi.os "darwin" }}
+
+{{ end }}
+
+# Linux only files
+{{ if .ne .chezmoi.os "Linux" }}
+
+{ end }}
