@@ -13,6 +13,6 @@ LICENSE
 {{ end }}
 
 # Linux only files
-{{ if .ne .chezmoi.os "Linux" }}
+{{ if ne .chezmoi.os "Linux" }}
 
 {{ end }}
