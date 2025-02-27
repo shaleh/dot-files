@@ -2,3 +2,16 @@
 
 [data]
     email = {{ $email | quote }}
+
+[diff]
+    {{ if lookPath "delta" -}}command = "delta"
+    {{ end -}}
+    exclude = ["scripts"]
+
+[merge]
+{{ if lookPath "kdiff3" -}}
+    command = "kdiff3"
+{{ end -}}
+{{ if eq .chezmoi.os "darwin" -}}
+    command = "/Applications/kdiff3.app/Contents/MacOS/kdiff3"
+{{ end -}}
