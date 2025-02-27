@@ -1,0 +1,23 @@
+#!/bin/bash
+
+output=$(git push $@ 2>&1)
+code=$?
+if [ $code -eq 0 ]; then
+    exit 0
+fi
+
+if echo "$output" | grep -q "has no upstream branch"; then
+    suggestion=$(echo "$output" | grep -E '    git push --set')
+    read -r -p "No upstream set
+$suggestion
+Use above? [Yn] " response
+    case "$response" in
+        [yY]|[yY][eE][sS]|"")
+            eval "$suggestion"
+            ;;
+        *)
+            ;;
+    esac
+fi
+
+exit $code

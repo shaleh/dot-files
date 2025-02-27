@@ -1,0 +1,3 @@
+#!/bin/sh
+
+git reflog show --pretty=format:'%gs ~ %gd' --date=relative $*
