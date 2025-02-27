@@ -4,7 +4,7 @@
     email = {{ $email | quote }}
 
 [diff]
-    {{ if lookPath "delta" -}}command = "delta"
+    {{ if lookPath "delta" -}}pager = "delta"
     {{ end -}}
     exclude = ["scripts"]
 
