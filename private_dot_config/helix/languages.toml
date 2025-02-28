@@ -1,11 +1,8 @@
-# [language-server]
-# ltex = { command='/opt/ltex-latest/bin/ltex-ls', config={ ltex.enabled=['html', 'markdown', 'org', 'rust', 'python', 'restructuredtext'] } }
-
 [language-server.ltex]
 command = "/opt/ltex-latest/bin/ltex-ls"
 
 [language-server.ltex.config]
-ltex.enabled = ['html', 'markdown', 'org', 'rust', 'python', 'restructuredtext']
+ltex.enabled = ['html', 'markdown', 'org', 'python', 'rust', 'restructuredtext']
 
 [[language]]
 name = "rst"
@@ -24,30 +21,6 @@ command = "clippy"
 name = "python"
 auto-format = false
 language-servers = [ "pylsp", "ltex" ]
-
-[language-server.pylsp.config.pylsp]
-plugins.mccabe.enabled = false
-plugins.pycodestyle.enabled = false
-plugins.pyflakes.enabled = false
-plugins.black.enabled = true
-plugins.flake8.enabled = true
-plugins.pylint.enabled = true
-plugins.pyls_mypy.enabled = true
-plugins.pyls_mypy.live_mode = false
-plugins.isort.enabled = true
-plugins.rope.enabled = true
-plugins.rope_autoimport.enabled = false
-
-[[language]]
-name = "swift"
-roots = ['.git']
-
-[[language]]
-name = "c"
-auto-format = false
-
-[language-server.clangd]
-command = "/opt/homebrew/Cellar/llvm/18.1.4/bin/clangd"
 
 [[language]]
 name = "fish"
