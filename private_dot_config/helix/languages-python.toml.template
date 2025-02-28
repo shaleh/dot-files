@@ -3,18 +3,16 @@ name = "python"
 auto-format = true
 rulers = [88]
 
-# [language-server.pylsp]
-# config = { pylsp={ configurationSources=['flake8'], plugins={ pycodestyle={ enabled = false }, pyflakes={ enabled = false }, mccabe={ enabled = false }, flake8={ enabled = true }, isort={ enabled = true }, black={ enabled = true }, rope={ enabled = true }, rope_autoimport={ enabled = false } } } }
+[language-server.pylsp]
+args = ["--verbose", "--log-file", "pylsp.log"]
 
 [language-server.pylsp.config.pylsp]
-plugins.mccabe.enabled = false
+skip_token_initialization = true
+configurationSources = ['flake8']
+plugins.pylsp_mypy.enabled = false
 plugins.pycodestyle.enabled = false
 plugins.pyflakes.enabled = false
-plugins.black.enabled = true
+plugins.mccabe.enabled = false
 plugins.flake8.enabled = true
-plugins.pylint.enabled = true
-plugins.pyls_mypy.enabled = true
-plugins.pyls_mypy.live_mode = false
 plugins.isort.enabled = true
 plugins.rope.enabled = true
-plugins.rope_autoimport.enabled = false
