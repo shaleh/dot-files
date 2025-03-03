@@ -14,7 +14,6 @@ packages:
     - 'eza'
     - 'fd'
     - 'fish'
-    - 'flycut'
     - 'fzf'
     - 'getoptions'
     - 'git-delta'
@@ -23,7 +22,6 @@ packages:
     - 'hub'
     - 'ispell'
     - 'jq'
-    - 'kdiff3'
     - 'lazygit'
     - 'llvm'
     - 'mandown'
@@ -43,6 +41,9 @@ packages:
     - 'wget'
     - 'yaml-language-server'
     - 'zellij'
+    casks:
+    - 'dehesselle-meld'
+    - 'flycut'
     - 'font-0xproto-nerd-font'
     - 'font-3270-nerd-font'
     - 'font-agave-nerd-font'
@@ -112,6 +113,5 @@ packages:
     - 'font-ubuntu-sans-nerd-font'
     - 'font-victor-mono-nerd-font'
     - 'font-zed-mono-nerd-font'
+    - 'kdiff3'
     - 'kitty'
-    casks:
-    - 'dehesselle-meld'
