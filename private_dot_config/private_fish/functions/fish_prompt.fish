@@ -23,11 +23,10 @@ function fish_prompt
         set login_part_spacing ""
     end
 
-    printf "« %s%s%s »%s\n%s%s \$ " \
+    printf "« %s%s%s »%s\n" \
         $login_part \
         $login_part_spacing \
         (prompt_pwd --dir-length 3 --full-length-dirs 2) \
-        "$stat" \
-        (chezmoi_prompt) \
-        (fish_vcs_prompt)
+        "$stat"
+    echo (chezmoi_prompt)(fish_vcs_prompt) '$ '
 end
