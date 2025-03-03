@@ -1,18 +1,19 @@
-[language-server.ltex]
-command = "/opt/ltex-latest/bin/ltex-ls"
-
-[language-server.ltex.config]
+[language-server.ltex-ls.config]
 ltex.enabled = ['html', 'markdown', 'org', 'python', 'rust', 'restructuredtext']
+
+[[language]]
+name = "markdown"
+language-servers = [ "marksman", "ltex-ls" ]
 
 [[language]]
 name = "rst"
 auto-format = true
-language-servers = [ "ltex" ]
+language-servers = [ "ltex-ls" ]
 
 [[language]]
 name = "rust"
 auto-format = true
-language-servers = [ "rust-analyzer", "ltex" ]
+language-servers = [ "rust-analyzer", "ltex-ls" ]
 
 [language-server.rust-analyzer.config.check]
 command = "clippy"
@@ -20,7 +21,7 @@ command = "clippy"
 [[language]]
 name = "python"
 auto-format = false
-language-servers = [ "pylsp", "ltex" ]
+language-servers = [ "pylsp", "ltex-ls" ]
 
 [[language]]
 name = "fish"
