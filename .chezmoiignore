@@ -9,10 +9,11 @@ LICENSE
 
 # OSX only files
 {{ if ne .chezmoi.os "darwin" }}
-
+.config/fish/conf.d/halostatue_fish_brew.fish
+.config/fish/functions/has_cask.fish
+.config/fish/functions/has_keg.fish
 {{ end }}
 
 # Linux only files
 {{ if ne .chezmoi.os "Linux" }}
-
 {{ end }}
