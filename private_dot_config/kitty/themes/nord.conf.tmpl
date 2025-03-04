@@ -1,0 +1,75 @@
+# vim:ft=kitty
+## Nord Colorscheme for Kitty
+## Based on:
+## - https://gist.github.com/marcusramberg/64010234c95a93d953e8c79fdaf94192
+## - https://github.com/arcticicestudio/nord-hyper
+
+font_family VictorMono Nerd Font Mono
+font_size 12
+
+# Basic colors
+foreground              {{.colors.nord.nord4}}
+background              {{.colors.nord.nord0}}
+selection_foreground    {{.colors.black}}
+selection_background    #fffacd
+
+# Cursor colors
+cursor                  {{.colors.nord.nord9}}
+
+# URL underline color when hovering with mouse
+url_color               #0087bd
+
+# Window border colors and terminal bell colors
+active_border_color     {{.colors.nord.nord9}}
+inactive_border_color   {{.colors.nord.nord3}}
+bell_border_color       {{.colors.nord.nord8}}
+visual_bell_color       none
+
+# Tab bar colors
+active_tab_foreground   {{.colors.nord.nord1}}
+active_tab_background   {{.colors.nord.nord8}}
+inactive_tab_foreground {{.colors.nord.nord5}}
+inactive_tab_background {{.colors.nord.nord3}}
+tab_bar_background      {{.colors.nord.nord1}}
+tab_bar_margin_color    none
+
+# Mark colors (marked text in the terminal)
+mark1_foreground {{.colors.nord.nord1}}
+mark1_background {{.colors.nord.nord8}}
+mark2_foreground {{.colors.nord.nord1}}
+mark2_background {{.colors.nord.nord11}}
+mark3_foreground {{.colors.nord.nord1}}
+mark3_background {{.colors.nord.nord13}}
+
+# The basic 16 colors
+# black
+color0   {{.colors.nord.nord2}}
+color8   {{.colors.nord.nord3}}
+
+# red
+color1   {{.colors.nord.nord11}}
+color9   {{.colors.nord.nord11}}
+
+# green
+color2   {{.colors.nord.nord14}}
+color10  {{.colors.nord.nord14}}
+
+# yellow
+color3   {{.colors.nord.nord13}}
+color11  {{.colors.nord.nord13}}
+
+# blue
+color4   {{.colors.nord.nord9}}
+color12  {{.colors.nord.nord9}}
+
+# magenta
+color5   {{.colors.nord.nord15}}
+color13  {{.colors.nord.nord15}}
+
+# cyan
+color6   {{.colors.nord.nord8}}
+color14  {{.colors.nord.nord7}}
+
+# white
+color7   {{.colors.nord.nord5}}
+color15  {{.colors.nord.nord6}}
