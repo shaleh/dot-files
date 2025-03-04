@@ -1,0 +1,14 @@
+#!/usr/bin/env fish
+
+set extra_opts $argv
+set branch (git branch $extra_opts | sed -e 's/ //g' | sk --ansi -i | sed -e 's|^origin/||')
+
+if test -z "$branch"
+    echo "Nothing selected."
+else
+    if string match -q -- "\**" $branch
+        echo "Error: already on that branch."
+        exit 1
+    end
+    git switch "$branch"
+end
