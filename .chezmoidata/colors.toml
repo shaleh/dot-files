@@ -1,17 +1,60 @@
+[colors]
+black = "#000000"
+white = "#ffffff"
+
 [colors.nord]
+# Polar Night is made up of four darker colors that are commonly used for base elements
+# like backgrounds or text color in br ight ambiance designs.
+#
+# The origin color or the Polar Night palette
 nord0 = "#2E3440"
+# A brighter shade color based on nord0
 nord1 = "#3B4252"
+# An even more brighter shade color of nord0
 nord2 = "#434C5E"
+# The brightest shade color based on nord0
 nord3 = "#4C566A"
+# 10% brighter for comments, see https://github.com/nordtheme/nord/issues/94
+#nord3_bright = "#616e88"
+# 15% brighter for comments, see https://github.com/nordtheme/nord/issues/94
+nord3_bright = "#6d7a96"
+
+# Snow Storm is made up of three bright colors that are commonly used for text colors or
+# base UI elements in bright ambiance designs.
+#
+# The origin color or the Snow Storm palette
 nord4 = "#D8DEE9"
+# A brighter shade color of nord4
 nord5 = "#E5E9F0"
+# The brightest shade color based on nord4
 nord6 = "#ECEFF4"
+
+# Frost can be described as the heart palette of Nord, a group of four bluish colors that
+# are commonly used for primary UI component and text highlighting and essential code syntax elements.
+#
+# A calm and highly contrasted color reminiscent of frozen polar water
 nord7 = "#8FBCBB"
+# The bright and shiny primary accent color reminiscent of pure and clear ice
 nord8 = "#88C0D0"
+# A more darkened and less saturated color reminiscent of arctic waters
 nord9 = "#81A1C1"
+# A dark and intensive color reminiscent of the deep arctic ocean
 nord10 = "#5E81AC"
+
+# Aurora consists of five colorful components reminiscent of the "Aurora borealis",
+# sometimes referred to as polar lights or northern lights.
+#
+# Red
 nord11 = "#BF616A"
+# Orange
 nord12 = "#D08770"
+# Yellow
 nord13 = "#EBCB8B"
+# Green
 nord14 = "#A3BE8C"
+# Purple
 nord15 = "#B48EAD"
+
+[colors.nord_night]
+nord0 = "#272c36"
+nord4 = "#b8bcc6"
