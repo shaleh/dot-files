@@ -1,115 +1,103 @@
-{{- $nord4 := "#D8DEE9" }}
-{{- $nord5 := "#E5E9F0" }}
-{{- $nord6 := "#ECEFF4" }}
-{{- $nord7 := "#8FBCBB" }}
-{{- $nord8 := "#88C0D0" }}
-{{- $nord9 := "#81A1C1" }}
-{{- $nord10 := "#5E81AC" }}
-{{- $nord11 := "#BF616A" }}
-{{- $nord12 := "#D08770" }}
-{{- $nord13 := "#EBCB8B" }}
-{{- $nord14 := "#A3BE8C" }}
-{{- $nord15 := "#B48EAD" }}
 filekinds:
-  normal: {foreground: "{{$nord4}}"}
-  directory: {foreground: "{{$nord9}}"}
-  symlink: {foreground: "{{$nord7}}"}
-  pipe: {foreground: "{{$nord5}}"}
-  block_device: {foreground: "{{$nord7}}"}
-  char_device: {foreground: "{{$nord7}}"}
-  socket: {foreground: "{{$nord14}}"}
-  special: {foreground: "{{$nord7}}"}
-  executable: {foreground: "{{$nord12}}"}
-  mount_point: {foreground: "{{$nord4}}"}
+  normal: {foreground: "{{.colors.nord.nord4}}"}
+  directory: {foreground: "{{.colors.nord.nord9}}"}
+  symlink: {foreground: "{{.colors.nord.nord7}}"}
+  pipe: {foreground: "{{.colors.nord.nord5}}"}
+  block_device: {foreground: "{{.colors.nord.nord7}}"}
+  char_device: {foreground: "{{.colors.nord.nord7}}"}
+  socket: {foreground: "{{.colors.nord.nord14}}"}
+  special: {foreground: "{{.colors.nord.nord7}}"}
+  executable: {foreground: "{{.colors.nord.nord12}}"}
+  mount_point: {foreground: "{{.colors.nord.nord4}}"}
 
 perms:
-  user_read: {foreground: "{{$nord6}}"}
-  user_write: {foreground: "{{$nord7}}"}
-  user_execute_file: {foreground: "{{$nord8}}"}
-  user_execute_other: {foreground: "{{$nord8}}"}
-  group_read: {foreground: "{{$nord6}}"}
-  group_write: {foreground: "{{$nord7}}"}
-  group_execute: {foreground: "{{$nord8}}"}
-  other_read: {foreground: "{{$nord4}}"}
-  other_write: {foreground: "{{$nord7}}"}
-  other_execute: {foreground: "{{$nord8}}"}
-  special_user_file: {foreground: "{{$nord7}}"}
-  special_other: {foreground: "{{$nord14}}"}
-  attribute: {foreground: "{{$nord4}}"}
+  user_read: {foreground: "{{.colors.nord.nord6}}"}
+  user_write: {foreground: "{{.colors.nord.nord7}}"}
+  user_execute_file: {foreground: "{{.colors.nord.nord8}}"}
+  user_execute_other: {foreground: "{{.colors.nord.nord8}}"}
+  group_read: {foreground: "{{.colors.nord.nord6}}"}
+  group_write: {foreground: "{{.colors.nord.nord7}}"}
+  group_execute: {foreground: "{{.colors.nord.nord8}}"}
+  other_read: {foreground: "{{.colors.nord.nord4}}"}
+  other_write: {foreground: "{{.colors.nord.nord7}}"}
+  other_execute: {foreground: "{{.colors.nord.nord8}}"}
+  special_user_file: {foreground: "{{.colors.nord.nord7}}"}
+  special_other: {foreground: "{{.colors.nord.nord14}}"}
+  attribute: {foreground: "{{.colors.nord.nord4}}"}
 
 size:
-  major: {foreground: "{{$nord4}}"}
-  minor: {foreground: "{{$nord7}}"}
-  number_byte: {foreground: "{{$nord6}}"}
-  number_kilo: {foreground: "{{$nord4}}"}
-  number_mega: {foreground: "{{$nord8}}"}
-  number_giga: {foreground: "{{$nord7}}"}
-  number_huge: {foreground: "{{$nord7}}"}
-  unit_byte: {foreground: "{{$nord4}}"}
-  unit_kilo: {foreground: "{{$nord8}}"}
-  unit_mega: {foreground: "{{$nord7}}"}
-  unit_giga: {foreground: "{{$nord7}}"}
-  unit_huge: {foreground: "{{$nord8}}"}
+  major: {foreground: "{{.colors.nord.nord4}}"}
+  minor: {foreground: "{{.colors.nord.nord7}}"}
+  number_byte: {foreground: "{{.colors.nord.nord6}}"}
+  number_kilo: {foreground: "{{.colors.nord.nord4}}"}
+  number_mega: {foreground: "{{.colors.nord.nord8}}"}
+  number_giga: {foreground: "{{.colors.nord.nord7}}"}
+  number_huge: {foreground: "{{.colors.nord.nord7}}"}
+  unit_byte: {foreground: "{{.colors.nord.nord4}}"}
+  unit_kilo: {foreground: "{{.colors.nord.nord8}}"}
+  unit_mega: {foreground: "{{.colors.nord.nord7}}"}
+  unit_giga: {foreground: "{{.colors.nord.nord7}}"}
+  unit_huge: {foreground: "{{.colors.nord.nord8}}"}
 
 users:
-  user_you: {foreground: "{{$nord6}}"}
-  user_root: {foreground: "{{$nord14}}"}
-  user_other: {foreground: "{{$nord7}}"}
-  group_yours: {foreground: "{{$nord4}}"}
-  group_other: {foreground: "{{$nord14}}"}
-  group_root: {foreground: "{{$nord14}}"}
+  user_you: {foreground: "{{.colors.nord.nord6}}"}
+  user_root: {foreground: "{{.colors.nord.nord14}}"}
+  user_other: {foreground: "{{.colors.nord.nord7}}"}
+  group_yours: {foreground: "{{.colors.nord.nord4}}"}
+  group_other: {foreground: "{{.colors.nord.nord14}}"}
+  group_root: {foreground: "{{.colors.nord.nord14}}"}
 
 links:
-  normal: {foreground: "{{$nord7}}"}
-  multi_link_file: {foreground: "{{$nord8}}"}
+  normal: {foreground: "{{.colors.nord.nord7}}"}
+  multi_link_file: {foreground: "{{.colors.nord.nord8}}"}
 
 git:
-  new: {foreground: "{{$nord4}}"}
-  modified: {foreground: "{{$nord7}}"}
-  deleted: {foreground: "{{$nord14}}"}
-  renamed: {foreground: "{{$nord8}}"}
-  typechange: {foreground: "{{$nord7}}"}
-  ignored: {foreground: "{{$nord14}}"}
-  conflicted: {foreground: "{{$nord11}}"}
+  new: {foreground: "{{.colors.nord.nord4}}"}
+  modified: {foreground: "{{.colors.nord.nord7}}"}
+  deleted: {foreground: "{{.colors.nord.nord14}}"}
+  renamed: {foreground: "{{.colors.nord.nord8}}"}
+  typechange: {foreground: "{{.colors.nord.nord7}}"}
+  ignored: {foreground: "{{.colors.nord.nord14}}"}
+  conflicted: {foreground: "{{.colors.nord.nord11}}"}
 
 git_repo:
-  branch_main: {foreground: "{{$nord6}}"}
-  branch_other: {foreground: "{{$nord7}}"}
-  git_clean: {foreground: "{{$nord8}}"}
-  git_dirty: {foreground: "{{$nord11}}"}
+  branch_main: {foreground: "{{.colors.nord.nord6}}"}
+  branch_other: {foreground: "{{.colors.nord.nord7}}"}
+  git_clean: {foreground: "{{.colors.nord.nord8}}"}
+  git_dirty: {foreground: "{{.colors.nord.nord11}}"}
 
 security_context:
-  colon: {foreground: "{{$nord8}}"}
-  user: {foreground: "{{$nord4}}"}
-  role: {foreground: "{{$nord7}}"}
-  typ: {foreground: "{{$nord14}}"}
-  range: {foreground: "{{$nord7}}"}
+  colon: {foreground: "{{.colors.nord.nord8}}"}
+  user: {foreground: "{{.colors.nord.nord4}}"}
+  role: {foreground: "{{.colors.nord.nord7}}"}
+  typ: {foreground: "{{.colors.nord.nord14}}"}
+  range: {foreground: "{{.colors.nord.nord7}}"}
 
 file_type:
-  image: {foreground: "{{$nord8}}"}
-  video: {foreground: "{{$nord7}}"}
-  music: {foreground: "{{$nord4}}"}
-  lossless: {foreground: "{{$nord7}}"}
-  crypto: {foreground: "{{$nord14}}"}
-  document: {foreground: "{{$nord6}}"}
-  compressed: {foreground: "{{$nord7}}"}
-  temp: {foreground: "{{$nord11}}"}
-  compiled: {foreground: "{{$nord8}}"}
-  build: {foreground: "{{$nord14}}"}
-  source: {foreground: "{{$nord7}}"}
+  image: {foreground: "{{.colors.nord.nord8}}"}
+  video: {foreground: "{{.colors.nord.nord7}}"}
+  music: {foreground: "{{.colors.nord.nord4}}"}
+  lossless: {foreground: "{{.colors.nord.nord7}}"}
+  crypto: {foreground: "{{.colors.nord.nord14}}"}
+  document: {foreground: "{{.colors.nord.nord6}}"}
+  compressed: {foreground: "{{.colors.nord.nord7}}"}
+  temp: {foreground: "{{.colors.nord.nord11}}"}
+  compiled: {foreground: "{{.colors.nord.nord8}}"}
+  build: {foreground: "{{.colors.nord.nord14}}"}
+  source: {foreground: "{{.colors.nord.nord7}}"}
 
-punctuation: {foreground: "{{$nord6}}"}
-date: {foreground: "{{$nord8}}"}
-inode: {foreground: "{{$nord4}}"}
-blocks: {foreground: "{{$nord14}}"}
-header: {foreground: "{{$nord6}}"}
-octal: {foreground: "{{$nord8}}"}
-flags: {foreground: "{{$nord7}}"}
+punctuation: {foreground: "{{.colors.nord.nord6}}"}
+date: {foreground: "{{.colors.nord.nord8}}"}
+inode: {foreground: "{{.colors.nord.nord4}}"}
+blocks: {foreground: "{{.colors.nord.nord14}}"}
+header: {foreground: "{{.colors.nord.nord6}}"}
+octal: {foreground: "{{.colors.nord.nord8}}"}
+flags: {foreground: "{{.colors.nord.nord7}}"}
 
-symlink_path: {foreground: "{{$nord7}}"}
-control_char: {foreground: "{{$nord8}}"}
-broken_symlink: {foreground: "{{$nord11}}"}
-broken_path_overlay: {foreground: "{{$nord14}}"}
+symlink_path: {foreground: "{{.colors.nord.nord7}}"}
+control_char: {foreground: "{{.colors.nord.nord8}}"}
+broken_symlink: {foreground: "{{.colors.nord.nord11}}"}
+broken_path_overlay: {foreground: "{{.colors.nord.nord14}}"}
 
 filenames:
   Cargo.toml: {icon: {glyph: 🦀}}
