@@ -15,9 +15,7 @@ nord2 = "#434C5E"
 # The brightest shade color based on nord0
 nord3 = "#4C566A"
 # 10% brighter for comments, see https://github.com/nordtheme/nord/issues/94
-#nord3_bright = "#616e88"
-# 15% brighter for comments, see https://github.com/nordtheme/nord/issues/94
-nord3_bright = "#6d7a96"
+nord3_bright = "#616e88"
 
 # Snow Storm is made up of three bright colors that are commonly used for text colors or
 # base UI elements in bright ambiance designs.
@@ -56,5 +54,6 @@ nord14 = "#A3BE8C"
 nord15 = "#B48EAD"
 
 [colors.nord_night]
+# These are 15% darker.
 nord0 = "#272c36"
 nord4 = "#b8bcc6"
