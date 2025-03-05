@@ -1,0 +1,76 @@
+# vim:ft=kitty
+## name: Nord Night
+## author: Sean Perry and Eric N. Vander Weele
+## upstream: https://www.nordtheme.com/
+## blurb: Nord theme utilizing the full Frost and Aurora palette.
+
+font_family VictorMono Nerd Font Mono
+font_size 12
+
+# Basic colors
+foreground              {{.colors.nord_night.nord4}}
+background              {{.colors.nord_night.nord0}}
+selection_foreground    {{.colors.nord.nord8}}
+selection_background    {{.colors.nord.nord3}}
+
+# Cursor colors
+cursor                  {{.colors.nord_night.nord4}}
+cursor_text_color       {{.colors.nord.nord1}}
+
+# URL underline color when hovering with mouse
+url_color               {{.colors.nord.nord8}}
+
+# Window border colors and terminal bell colors
+active_border_color     {{.colors.nord.nord9}}
+inactive_border_color   {{.colors.nord.nord3}}
+bell_border_color       {{.colors.nord.nord8}}
+visual_bell_color       none
+
+# Tab bar colors
+active_tab_foreground   {{.colors.nord.nord1}}
+active_tab_background   {{.colors.nord.nord8}}
+inactive_tab_foreground {{.colors.nord.nord5}}
+inactive_tab_background {{.colors.nord.nord3}}
+tab_bar_background      {{.colors.nord.nord1}}
+tab_bar_margin_color    none
+
+# Mark colors (marked text in the terminal)
+mark1_foreground {{.colors.nord.nord1}}
+mark1_background {{.colors.nord.nord8}}
+mark2_foreground {{.colors.nord.nord1}}
+mark2_background {{.colors.nord.nord11}}
+mark3_foreground {{.colors.nord.nord1}}
+mark3_background {{.colors.nord.nord13}}
+
+# The basic 16 colors
+# black
+color0   {{.colors.nord.nord1}}
+color8   {{.colors.nord.nord3}}
+
+# red
+color1   {{.colors.nord.nord11}}
+color9   {{.colors.nord.nord11}}
+
+# green
+color2   {{.colors.nord.nord14}}
+color10  {{.colors.nord.nord14}}
+
+# yellow
+color3   {{.colors.nord.nord13}}
+color11  {{.colors.nord.nord12}}
+
+# blue
+color4   {{.colors.nord.nord9}}
+color12  {{.colors.nord.nord10}}
+
+# magenta
+color5   {{.colors.nord.nord15}}
+color13  {{.colors.nord.nord15}}
+
+# cyan
+color6   {{.colors.nord.nord8}}
+color14  {{.colors.nord.nord7}}
+
+# white
+color7   {{.colors.nord.nord5}}
+color15  {{.colors.nord.nord6}}

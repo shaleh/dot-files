@@ -1,3 +1,3 @@
 function ls --wraps=eza --description 'alias ls=eza'
-    eza -F --git $argv
+    eza -F --icons --git $argv
 end
