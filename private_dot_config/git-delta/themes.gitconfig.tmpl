@@ -1,0 +1,63 @@
+# To use these themes, first include this file in your own gitconfig file:
+#
+# [include]
+#     path = PATH/TO/delta/themes.gitconfig
+#
+# Then, in your own gitconfig file, activate the chosen theme, e.g.
+#
+# [delta]
+#    features = kingfisher
+#
+# Please add your own themes to this file, and open a PR.
+#
+# Instructions:
+#
+# 1. The name of the theme must be the name of some sort of wild organism:
+#    mammal, bird, plant, mollusk -- whatever. It can be in any language.
+#
+# 2. Use `delta --show-config` to list all the style settings that are active in
+#    your current delta environment, but only include settings in your theme
+#    that are essential to its appearance.
+#
+# 3. Include either `dark = true` or `light = true` according to whether it is
+#    designed for a light or dark terminal background. (This marks a feature as
+#    a "theme", causing it to be picked up by `delta --show-themes`).
+#
+# 4. Feel free to include a comment line indicating who is the author of the
+#    theme. E.g. a link to your github user page.
+
+[delta "nord"]
+    # author: https://github.com/anthony-halim
+    dark = true
+    syntax-theme = Nord
+    file-added-label = [+]
+    file-copied-label = [==]
+    file-modified-label = [*]
+    file-removed-label = [-]
+    file-renamed-label = [->]
+    file-style = omit
+    hunk-header-decoration-style = "{{.colors.nord.nord10}}" ul
+    hunk-header-file-style = "{{.colors.nord.nord15}}" ul bold
+    hunk-header-line-number-style = "{{.colors.nord.nord13}}" box bold
+    hunk-header-style = file line-number syntax bold italic
+    plus-style = brightgreen
+    plus-emph-style = "{{.colors.nord.nord0}}" "{{.colors.nord.nord14}}"
+    minus-style = brightred
+    minus-emph-style = "{{.colors.nord.nord0}}" "{{.colors.nord.nord11}}"
+    line-numbers = true
+    line-numbers-minus-style = brightred
+    line-numbers-plus-style = brightgreen
+    line-numbers-left-style = "{{.colors.nord.nord10}}"
+    line-numbers-right-style = "{{.colors.nord.nord10}}"
+    line-numbers-zero-style = "{{.colors.nord.nord3}}"
+    zero-style = syntax
+    whitespace-error-style = "{{.colors.nord.nord0}}" bold
+    blame-code-style = syntax
+    blame-format = "{author:<18} {commit:<6} {timestamp:<15}"
+    blame-palette = "{{.colors.nord.nord0}}" "{{.colors.nord.nord1}}" "{{.colors.nord.nord2}}"
+    merge-conflict-begin-symbol = ~
+    merge-conflict-end-symbol = ~
+    merge-conflict-ours-diff-header-style = "{{.colors.nord.nord13}}" bold
+    merge-conflict-ours-diff-header-decoration-style = "{{.colors.nord.nord10}}" box
+    merge-conflict-theirs-diff-header-style = "{{.colors.nord.nord13}}" bold
+    merge-conflict-theirs-diff-header-decoration-style = "{{.colors.nord.nord10}}" box
