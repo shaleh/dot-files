@@ -1,0 +1,38 @@
+;; Basic home row mods example using QWERTY
+
+(defcfg
+  process-unmapped-keys yes
+  macos-dev-names-include (
+    "Apple Internal Keyboard / Trackpad"
+  )
+)
+;; minimal source map. Only the keys we are changing.
+(defsrc
+  caps 
+  lsft z x c v n m , . rsft
+  lctl lalt lmet rmet ralt
+)
+(defvar
+  ;; Note: consider using different time values for your different fingers.
+  ;; For example, your pinkies might be slower to release keys and index
+  ;; fingers faster.
+  tap-time 200
+  hold-time 150
+)
+(defalias
+  cw (caps-word-toggle 2000)
+  z (tap-hold $tap-time $hold-time z lsft)
+  x (tap-hold $tap-time $hold-time x lctl)
+  c (tap-hold $tap-time $hold-time c lalt)
+  v (tap-hold $tap-time $hold-time v lmet)
+  n (tap-hold $tap-time $hold-time n rmet)
+  m (tap-hold $tap-time $hold-time m ralt)
+  , (tap-hold $tap-time $hold-time , rctl)
+  . (tap-hold $tap-time $hold-time . rsft)
+)
+;; Disable the usual mod keys. Force use of home row.
+(deflayer base
+  @cw
+  XX @z  @x  @c  @v  @n  @m  @,  @. XX
+  XX XX XX XX XX
+)
