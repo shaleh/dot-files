@@ -1,8 +1,9 @@
-theme = "nord-night"
+theme = "my-nord-night"
 
 [editor]
 auto-pairs = false
 line-number = "relative"
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
 
 [editor.file-picker]
 hidden = false
