@@ -1,19 +1,33 @@
-[language-server.ltex-ls.config]
+[[language]]
+name = "__common__"
+scope = "source.__common__"
+file-types = []
+language-servers = [ "ltex-ls-plus", "scls", "merge-assistant" ]
+
+[language-server.scls]
+command = "simple-completion-language-server"
+
+[language-server.scls.config]
+max_completion_items = 100           # set max completion results len for each group: words, snippets, unicode-input
+feature_words = true                 # enable completion by word
+feature_snippets = true              # enable snippets
+snippets_first = true                # completions will return before snippets by default
+snippets_inline_by_word_tail = false # suggest snippets by WORD tail, for example text `xsq|` become `x^2|` when snippet `sq` has body `^2`
+feature_unicode_input = false        # enable "unicode input"
+feature_paths = false                # enable path completion
+feature_citations = false            # enable citation completion (only on `citation` feature enabled)
+
+# write logs to /tmp/completion.log
+# [language-server.scls.environment]
+# RUST_LOG = "info,simple-completion-language-server=info"
+# LOG_FILE = "scls-completion.log"
+
+[language-server.ltex-ls-plus.config]
 ltex.enabled = ['html', 'markdown', 'org', 'python', 'rust', 'restructuredtext']
-
-[[language]]
-name = "markdown"
-language-servers = [ "marksman", "ltex-ls" ]
-
-[[language]]
-name = "rst"
-auto-format = true
-language-servers = [ "ltex-ls" ]
 
 [[language]]
 name = "rust"
 auto-format = true
-language-servers = [ "rust-analyzer", "ltex-ls" ]
 
 [language-server.rust-analyzer.config.check]
 command = "clippy"
@@ -21,7 +35,6 @@ command = "clippy"
 [[language]]
 name = "python"
 auto-format = false
-language-servers = [ "pylsp", "ltex-ls" ]
 
 [[language]]
 name = "fish"
@@ -29,4 +42,8 @@ language-servers = [ "fish-lsp" ]
 
 [language-server.fish-lsp]
 command = "fish-lsp"
-args= ["start"]
+args = ["start"]
+
+[language-server.merge-assistant]
+command = "merge-assistant"
+args = ["--debug"]
