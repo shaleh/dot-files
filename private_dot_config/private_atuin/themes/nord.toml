@@ -1,0 +1,12 @@
+[theme]
+name = "nord-night"
+parent = "default"
+
+[colors]
+AlertError = "#BF616A"
+AlertWarn = "#EBCB8B"
+AlertInfo = "#A3BE8C"
+Annotation = "#D8DEE9"
+Guidance = "#81A1C1"
+Important = "#ECEFF4"
+Muted = "#616e88"
