@@ -1,8 +1,15 @@
 [include]
 	path = ~/.config/git-delta/themes.gitconfig
 
-[user]
-	name = Sean Perry
+[includeIf "gitdir:~/repos/work/"]
+    path = ~/.config/git/work.gitconfig
+
+[includeIf "gitdir:~/repos/personal/"]
+    path = ~/.config/git/personal.gitconfig
+
+[includeIf "gitdir:~/repos/opensource/"]
+    path = ~/.config/git/personal.gitconfig
+
 [pull]
 	rebase = true
 [core]
@@ -19,37 +26,15 @@
 	features = nord
 	#side-by-side = true
 
-[diff]
-        tool = kdiff3
-
-[difftool "kdiff3"]
-        path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
-
 [difftool]
-        prompt = false
-        keepBackup = false
-        trustExitCode = false
+    prompt = false
+    keepBackup = false
+    trustExitCode = false
 
 [merge]
-        tool = kdiff3
+	conflictstyle = diff3
 
 [mergetool]
-        prompt = false
-        keepBackup = false
-        keepTemporaries = false
-
-[mergetool "kdiff3"]
-        path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
-
-# [merge]
-#     conflictstyle = zdiff3
-
-# [diff]
-#     colorMoved = default
-# 	tool = meld
-
-# [difftool]
-# 	prompt = false
-
-# [difftool "meld"]
-# 	cmd = /Applications/Meld.app/Contents/MacOS/Meld $LOCAL $REMOTE
+    prompt = false
+    keepBackup = false
+    keepTemporaries = false
