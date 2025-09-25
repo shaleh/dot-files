@@ -28,5 +28,5 @@ function fish_prompt
         $login_part_spacing \
         (prompt_pwd --dir-length 3 --full-length-dirs 2) \
         "$stat"
-    echo (chezmoi_prompt) (fish_vcs_prompt) '$ '
+    echo (chezmoi_prompt) (fish_vcs_prompt) '| '
 end

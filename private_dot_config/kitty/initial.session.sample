@@ -1,0 +1,26 @@
+# This launchs tabs with a tall left window and 2 vertically stacked windows on the right.
+# 'launch' of only a shell here is intentional. If the launched thing exits it also closes
+# the window. Adding an editor here would prevent exiting and re-launching the editor.
+
+layout tall
+
+new_tab Name 1
+cd ~/repos/some/path
+launch
+launch
+launch
+
+new_tab Name 2
+cd ~/repos/some/path
+launch
+launch
+launch
+
+new_tab Name 3
+cd ~/repos/some/path
+launch
+launch
+launch
+
+# goto tab 1
+focus_matching_window var:window=first

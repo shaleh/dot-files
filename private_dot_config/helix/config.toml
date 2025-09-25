@@ -4,6 +4,9 @@ theme = "my-nord-night"
 auto-pairs = false
 line-number = "relative"
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+# word-completion = true
+# word-completion-trigger-length = 5
+# rounded-corners = true
 
 [editor.file-picker]
 hidden = false
@@ -33,6 +36,8 @@ right = ["register", "diagnostics", "selections", "position-percentage", "total-
 # newline = "⏎"
  
 [keys.normal]
+tab = "move_parent_node_end"
+S-tab = "move_parent_node_start"
 '#' = 'toggle_comments'
 a = ['append_mode', 'collapse_selection']
 w = 'move_next_sub_word_start'
@@ -58,3 +63,11 @@ A-c = "change_selection"
 # W = 'extend_next_sub_word_start'
 # B = 'extend_prev_sub_word_start'
 # E = 'extend_next_sub_word_end'
+#
+
+[keys.insert]
+S-tab = "move_parent_node_start"
+
+[keys.select]
+tab = "extend_parent_node_end"
+S-tab = "extend_parent_node_start"

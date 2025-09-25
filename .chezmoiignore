@@ -1,6 +1,10 @@
+*/.DS_Store
 README.md
 LICENSE
 .config/fish/fish_variables
+# Each machine will be a little different.
+.config/kitty/initial.session
+.config/git/work.gitconfig
 
 ### This section is for OS specific files.
 ### The logic is reversed here than one might expect.
