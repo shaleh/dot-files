@@ -16,6 +16,7 @@ LICENSE
 .config/fish/conf.d/halostatue_fish_brew.fish
 .config/fish/functions/has_cask.fish
 .config/fish/functions/has_keg.fish
+Library/Application Support/Code/User/
 {{ end }}
 
 # Linux only files

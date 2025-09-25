@@ -1,0 +1,29 @@
+[
+    // Disable the default `enter` submit behaviour for GitHub Copilot chat
+    {
+        "key": "enter",
+        "command": "-workbench.action.chat.submit",
+        "when": "inChatInput && (chatInputHasText || chatInstructionsAttached)"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "-workbench.action.chat.submitWithCodebase",
+        "when": "inChatInput && (chatInputHasText || chatInstructionsAttached)"
+    },
+    // Setup new bindings for GitHub Copilot chat
+    {
+        "key": "cmd+enter",
+        "command": "workbench.action.chat.submit",
+        "when": "inChatInput && (chatInputHasText || chatInstructionsAttached)"
+    },
+    {
+        "key": "cmd+shift+enter",
+        "command": "workbench.action.chat.submitWithCodebase",
+        "when": "inChatInput && (chatInputHasText || chatInstructionsAttached)"
+    },
+    {
+        "key": "enter",
+        "command": "editor.action.insertLineAfter",
+        "when": "inChatInput"
+    }
+]

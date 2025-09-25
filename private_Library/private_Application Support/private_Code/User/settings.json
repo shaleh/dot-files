@@ -1,0 +1,8 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "git.openRepositoryInParentFolders": "always",
+    "workbench.colorTheme": "Nord",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "editor.inlineSuggest.enabled": false
+}
