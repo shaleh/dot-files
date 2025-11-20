@@ -1,59 +1,35 @@
 # Nord with tweaks by Shaleh
 
-inherits = 'nord'
+inherits = "nord"
 
 "function.decorator" = "nord12"
 "keyword.directive" = "nord10"
 "variable.parameter" = "nord4"
 "ui.linenr" = { fg = "nord3_bright", modifiers = ["italic"] }
 "ui.virtual.inlay-hint" = { bg = "nord2", modifiers = ["italic"] }
+# This fixes bracket match highlighting.
+"ui.cursor.match" = { fg = "nord8", bg = "nord3" }
+"ui.selection.primary" = { bg = "nord1" }
 
 [palette]
-# Polar Night is made up of four darker colors that are commonly used for base elements like backgrounds or text color in
-# bright ambiance designs.
-#
-# The origin color or the Polar Night palette
-nord0 = "{{.colors.nord.nord0}}"
-# A brighter shade color based on nord0
+nord0 = "{{.colors.nord_night.nord0}}"
 nord1 = "{{.colors.nord.nord1}}"
-# An even more brighter shade color of nord0
 nord2 = "{{.colors.nord.nord2}}"
-# The brightest shade color based on nord0
 nord3 = "{{.colors.nord.nord3}}"
 # 10% brighter for comments, see https://github.com/nordtheme/nord/issues/94
 nord3_bright = "{{.colors.nord.nord3_bright}}"
 
-# Snow Storm is made up of three bright colors that are commonly used for text colors or base UI elements in bright ambiance
-# designs.
-# The origin color or the Snow Storm palette
-nord4 = "{{.colors.nord.nord4}}"
-# A brighter shade color of nord4
+nord4 = "{{.colors.nord_night.nord4}}"
 nord5 = "{{.colors.nord.nord5}}"
-# The brightest shade color based on nord4
 nord6 = "{{.colors.nord.nord6}}"
 
-# Frost can be described as the heart palette of Nord, a group of four bluish colors that are commonly used for primary UI
-# component and text highlighting and essential code syntax elements.
-#
-# A calm and highly contrasted color reminiscent of frozen polar water
 nord7 = "{{.colors.nord.nord7}}"
-# The bright and shiny primary accent color reminiscent of pure and clear ice
 nord8 = "{{.colors.nord.nord8}}"
-# A more darkened and less saturated color reminiscent of arctic waters
 nord9 = "{{.colors.nord.nord9}}"
-# A dark and intensive color reminiscent of the deep arctic ocean
 nord10 = "{{.colors.nord.nord10}}"
 
-# Aurora consists of five colorful components reminiscent of the "Aurora borealis", sometimes referred to as polar lights or
-# northern lights.
-#
-# Red
 nord11 = "{{.colors.nord.nord11}}"
-# Orange
 nord12 = "{{.colors.nord.nord12}}"
-# Yellow
 nord13 = "{{.colors.nord.nord13}}"
-# Green
 nord14 = "{{.colors.nord.nord14}}"
-# Purple
 nord15 = "{{.colors.nord.nord15}}"
