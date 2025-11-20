@@ -1,6 +1,6 @@
 [colors]
 black = "#000000"
-white = "#ffffff"
+white = "#FFFFFF"
 
 [colors.nord]
 # Polar Night is made up of four darker colors that are commonly used for base elements
@@ -15,7 +15,7 @@ nord2 = "#434C5E"
 # The brightest shade color based on nord0
 nord3 = "#4C566A"
 # 10% brighter for comments, see https://github.com/nordtheme/nord/issues/94
-nord3_bright = "#616e88"
+nord3_bright = "#616E88"
 
 # Snow Storm is made up of three bright colors that are commonly used for text colors or
 # base UI elements in bright ambiance designs.
@@ -56,4 +56,4 @@ nord15 = "#B48EAD"
 [colors.nord_night]
 # These are 15% darker.
 nord0 = "#252933"
-nord4 = "#b8bcc6"
+nord4 = "#B8BCC6"
