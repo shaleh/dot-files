@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd "$(chezmoi source-path)" || exit 1
+lazygit "$@"
