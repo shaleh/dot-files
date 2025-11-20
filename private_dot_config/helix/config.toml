@@ -1,4 +1,4 @@
-theme = "my-nord-night"
+theme = "my-nord"
 
 [editor]
 auto-pairs = false
