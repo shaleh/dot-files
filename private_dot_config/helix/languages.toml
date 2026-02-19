@@ -1,8 +1,21 @@
-[[language]]
-name = "__common__"
-scope = "source.__common__"
-file-types = []
-language-servers = [ "ltex-ls-plus", "scls", "merge-assistant" ]
+# [[language]]
+# name = "__common__"
+# scope = "source.__common__"
+# file-types = []
+# language-servers = [ "ltex-ls-plus", "merge-conflict-assistant" ]
+
+# [[language]]
+# name = "txt"
+# scope = "source.txt"
+# injection-regex = "txt"
+# file-types = ["txt"]
+# shebangs = []
+# comment-token = "#"
+# language-servers = [ "merge-assistant" ]
+
+[language-server.codebook]
+command = "codebook-lsp"
+args = ["serve"]
 
 [language-server.scls]
 command = "simple-completion-language-server"
@@ -28,6 +41,7 @@ ltex.enabled = ['html', 'markdown', 'org', 'python', 'rust', 'restructuredtext']
 [[language]]
 name = "rust"
 auto-format = true
+language-servers = [ "rust-analyzer", "codebook", "merge-conflict-assistant" ]
 
 [language-server.rust-analyzer.config.check]
 command = "clippy"
@@ -35,15 +49,51 @@ command = "clippy"
 [[language]]
 name = "python"
 auto-format = false
+language-servers = [ "pylsp", "codebook", "merge-conflict-assistant" ]
 
 [[language]]
 name = "fish"
-language-servers = [ "fish-lsp" ]
+indent = { tab-width = 4, unit = " " }
+language-servers = [ "fish-lsp", "codebook", "merge-conflict-assistant" ]
 
 [language-server.fish-lsp]
 command = "fish-lsp"
 args = ["start"]
 
-[language-server.merge-assistant]
-command = "merge-assistant"
-args = ["--debug"]
+[language-server.merge-conflict-assistant]
+command = "merge-conflict-assistant"
+# args = ["--debug"]
+
+[[language]]
+name = "bash"
+indent = { tab-width = 4, unit = " " }
+language-servers = [ "bash-language-server", "codebook", "merge-conflict-assistant" ]
+
+[[language]]
+name = "markdown"
+language-servers = [ "marksman", "markdown-oxide", "codebook", "merge-conflict-assistant" ]
+
+[[language]]
+name = "tcl"
+file-types = [ "tcl", "expect" ]
+shebangs = [ "tclsh", "tclish", "jimsh", "wish", "expect" ]
+
+[[language]]
+name = "javascript"
+language-servers = [ "typescript-language-server", "merge-conflict-assistant" ]
+
+[[language]]
+name = "jsx"
+language-servers = [ "typescript-language-server", "merge-conflict-assistant" ]
+
+[[language]]
+name = "typescript"
+language-servers = [ "typescript-language-server", "merge-conflict-assistant" ]
+
+[[language]]
+name = "tsx"
+language-servers = [ "typescript-language-server", "merge-conflict-assistant" ]
+
+[[language]]
+name = "json"
+language-servers = [ "vscode-json-language-server", "merge-conflict-assistant" ]
